@@ -1,0 +1,17 @@
+[ 
+    {
+      "title": "Project One",
+      "description": "A web app for tracking tasks and deadlines.",
+      "technologies": ["React", "Node.js", "MongoDB"],
+      "liveLink": "https://example.com/project1",
+      "repoLink": "https://github.com/yourusername/project1"
+    },
+    {
+      "title": "Project Two",
+      "description": "An e-commerce platform with user authentication.",
+      "technologies": ["Django", "PostgreSQL", "Bootstrap"],
+      "liveLink": "https://example.com/project2",
+      "repoLink": "https://github.com/yourusername/project2"
+    }
+  ]
+  
