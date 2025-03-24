@@ -1,0 +1,136 @@
+.campaign-container {
+  padding: 2rem;
+  margin-top: 4rem;
+}
+
+.campaign-header {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #41403e;
+}
+
+.campaign-intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.campaigns-grid {
+  margin-top: 2rem;
+}
+
+.campaign-col {
+  margin-bottom: 2rem;
+}
+
+.campaign-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #c1c0bd;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.campaign-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.campaign-preview {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-bottom: 1px solid #e6e7e9;
+  background-color: #f0f0f0;
+}
+
+.pdf-thumbnail {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.pdf-object {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.pdf-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-color: #f5f5f5;
+  color: #666;
+  text-align: center;
+  padding: 20px;
+}
+
+.campaign-content {
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.campaign-title {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.campaign-description {
+  flex-grow: 1;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.campaign-tags {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.campaign-tags .badge {
+  background-color: #f0f0f0;
+  color: #555;
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+}
+
+.campaign-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: auto;
+}
+
+.campaign-actions .paper-btn {
+  flex: 1;
+  text-align: center;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .campaign-preview {
+    height: 150px;
+  }
+  
+  .campaign-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .campaign-title {
+    font-size: 1.3rem;
+  }
+}
