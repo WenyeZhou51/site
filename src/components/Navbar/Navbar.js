@@ -10,9 +10,9 @@ function Navbar() {
   };
 
   return (
-    <nav className="border fixed paper-navbar">
+    <nav className="paper-navbar">
       <div className="nav-brand">
-        <h3><Link to="/about-me" className="paper-btn btn-small">About Me</Link></h3>
+        <h3><Link to="/about-me">About Me</Link></h3>
       </div>
       <div className="collapsible">
         <input 
@@ -29,9 +29,9 @@ function Navbar() {
         </label>
         <div className={`collapsible-body ${menuOpen ? 'open' : ''}`}>
           <ul className="inline">
-            <li><Link to="/" className="paper-btn btn-small">Games</Link></li>
-            <li><Link to="/rpg-campaigns" className="paper-btn btn-small">RPG Campaigns</Link></li>
-            <li><Link to="/random-art" className="paper-btn btn-small">Random Art</Link></li>
+            <li><Link to="/">Games</Link></li>
+            <li><Link to="/rpg-campaigns">RPG Campaigns</Link></li>
+            <li><Link to="/random-art">Random Art</Link></li>
           </ul>
         </div>
       </div>

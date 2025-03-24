@@ -143,23 +143,25 @@ function Creations() {
   };
 
   return (
-    <div className="paper section">
-      <h2 className="title">Random Art</h2>
-      <p className="art-intro">
-        Explore my collection of artistic creations across different mediums and styles. Each project represents a unique exploration of visual storytelling.
-      </p>
-      
-      <div className="art-projects">
-        {artProjects.map((project) => (
-          <div key={project.id} className="card art-project-card">
-            <h3 className="art-project-title">{project.title}</h3>
-            <p className="art-project-description">{project.description}</p>
-            
-            <div className="art-project-content">
-              {renderContent(project)}
+    <div className="about-canvas">
+      <div className="about-content">
+        <h2 className="about-title">Random Art</h2>
+        <p className="art-intro">
+          Explore my collection of artistic creations across different mediums and styles. Each project represents a unique exploration of visual storytelling.
+        </p>
+        
+        <div className="art-projects">
+          {artProjects.map((project) => (
+            <div key={project.id} className="art-project-card">
+              <h3 className="art-project-title">{project.title}</h3>
+              <p className="art-project-description">{project.description}</p>
+              
+              <div className="art-project-content">
+                {renderContent(project)}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );

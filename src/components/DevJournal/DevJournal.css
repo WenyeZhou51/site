@@ -1,63 +1,76 @@
-.campaign-container {
-  padding: 2rem;
-  margin-top: 4rem;
+/* Main container - match AboutMe and Random Art styling */
+.about-title {
+  font-family: 'Permanent Marker', 'Arial', sans-serif;
+  font-size: 3rem;
+  color: #333;
+  margin-bottom: 2.5rem;
+  position: relative;
+  display: inline-block;
+  text-align: center;
 }
 
-.campaign-header {
-  text-align: center;
-  margin-bottom: 1rem;
-  color: #41403e;
+.about-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 130%;
+  height: 2px;
+  background: repeating-linear-gradient(to right, transparent, transparent 4px, #333 4px, #333 8px);
 }
 
 .campaign-intro {
   text-align: center;
   max-width: 800px;
-  margin: 0 auto 2rem;
+  margin: 0 auto 3rem;
   font-size: 1.1rem;
   color: #555;
+  font-family: 'Open Sans', 'Helvetica', sans-serif;
 }
 
-.campaigns-grid {
-  margin-top: 2rem;
-}
-
-.campaign-col {
-  margin-bottom: 2rem;
+.campaigns-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .campaign-card {
-  margin-bottom: 1.5rem;
-  background-color: white;
-  padding: 1.5rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.15);
+  background-color: #ffffff;
+  padding: 2rem;
+  margin-bottom: 2.5rem;
+  border-top: 4px solid #4285f4;
+  width: 100%;
 }
 
-.campaign-card h3 {
+.campaign-title {
+  font-size: 1.8rem;
   margin-bottom: 1rem;
-  color: var(--primary);
-  border-bottom: 1px dashed #ccc;
-  padding-bottom: 0.5rem;
+  color: #333;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.8rem;
+  font-family: 'Open Sans', 'Helvetica', sans-serif;
+  font-weight: 600;
 }
 
-.campaign-card p {
+.campaign-description {
+  font-family: 'Open Sans', 'Helvetica', sans-serif;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
   line-height: 1.6;
-  margin-bottom: 1.5rem;
+  color: #555;
 }
 
+/* PDF preview styles */
 .campaign-preview {
   width: 100%;
-  height: 200px;
+  height: 500px;
+  margin-bottom: 1.5rem;
+  border: 1px solid #e0e0e0;
+  background-color: #f5f5f5;
   overflow: hidden;
-  border-bottom: 1px solid #e6e7e9;
-  background-color: #f0f0f0;
-}
-
-.pdf-thumbnail {
-  width: 100%;
-  height: 100%;
-  position: relative;
 }
 
 .pdf-object {
@@ -71,71 +84,91 @@
   align-items: center;
   justify-content: center;
   height: 100%;
-  background-color: #f5f5f5;
   color: #666;
   text-align: center;
   padding: 20px;
 }
 
-.campaign-content {
-  padding: 1.5rem;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.campaign-title {
-  margin-top: 0;
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
-}
-
-.campaign-description {
-  flex-grow: 1;
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
-  color: #555;
-}
-
-.campaign-tags {
-  margin-bottom: 1.5rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.campaign-tags .badge {
-  background-color: #f0f0f0;
-  color: #555;
-  padding: 0.25rem 0.75rem;
-  border-radius: 15px;
-  font-size: 0.8rem;
-}
-
+/* Action buttons */
 .campaign-actions {
   display: flex;
   gap: 1rem;
-  justify-content: space-between;
+  justify-content: center;
+  margin-top: 1.5rem;
+  width: 100%;
 }
 
-.campaign-actions .paper-btn {
-  flex: 1;
+.campaign-actions a {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  background: none;
+  border: 2px solid #4285f4;
+  color: #4285f4;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  min-width: 120px;
   text-align: center;
-  margin: 0;
+}
+
+.campaign-actions a:hover {
+  background-color: #4285f4;
+  color: white;
+}
+
+.campaign-actions a.btn-primary {
+  background-color: #4285f4;
+  color: white;
+}
+
+.campaign-actions a.btn-primary:hover {
+  background-color: #2d76e7;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+  .about-title {
+    font-size: 2.5rem;
+  }
+  
+  .campaign-title {
+    font-size: 1.5rem;
+  }
+  
+  .campaign-card {
+    padding: 1.5rem;
+  }
+  
   .campaign-preview {
-    height: 150px;
+    height: 400px;
   }
   
   .campaign-actions {
     flex-direction: column;
-    gap: 0.5rem;
+    align-items: center;
   }
   
-  .campaign-card h3 {
+  .campaign-actions a {
+    width: 100%;
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-title {
+    font-size: 2rem;
+  }
+  
+  .campaign-title {
     font-size: 1.3rem;
+  }
+  
+  .campaign-card {
+    padding: 1rem;
+  }
+  
+  .campaign-preview {
+    height: 300px;
   }
 }
