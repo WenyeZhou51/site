@@ -36,3 +36,26 @@
     transform: rotate(360deg);
   }
 }
+
+/* Paper CSS enhancements */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.content-container {
+  padding: 2rem 1rem;
+  margin-top: 60px; /* Space for fixed navbar */
+}
+
+/* Paper CSS theme customization */
+:root {
+  --primary: #41403e;
+  --secondary: #0071de;
+}
+
+.paper {
+  background-color: #f8f8f8;
+  border-radius: 0.2rem;
+}

@@ -5,18 +5,23 @@ import About from './components/About/About';
 import DevJournal from './components/DevJournal/DevJournal';
 import Creations from './components/Creations/Creations';
 import AboutMe from './components/AboutMe/AboutMe';
+import './App.css';
 
 function App() {
   return (
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<About />} />
-        <Route path="/about-me" element={<AboutMe />} />
-        <Route path="/rpg-campaigns" element={<DevJournal />} />
-        <Route path="/random-art" element={<Creations />} />
-      </Routes>
-    </Router>  
+    <div className="paper container">
+      <Router>
+        <Navbar />
+        <div className="content-container">
+          <Routes>
+            <Route path="/" element={<About />} />
+            <Route path="/about-me" element={<AboutMe />} />
+            <Route path="/rpg-campaigns" element={<DevJournal />} />
+            <Route path="/random-art" element={<Creations />} />
+          </Routes>
+        </div>
+      </Router>  
+    </div>
   );
 }
 

@@ -20,7 +20,7 @@ function Creations() {
       title: "Journal Comic",
       description: "Journal comic, 2024",
       type: "pdf",
-      pdfPath: "/Assets/Random Art/Journal Comic/Tim_Book_cut.pdf",
+      pdfPath: "/Asset/Random Art/Journal Comic/Tim_Book_cut.pdf",
     },
     {
       id: "tarot-cards",
@@ -29,19 +29,19 @@ function Creations() {
       type: "gallery",
       images: [
         {
-          path: "/Assets/Random Art/Tarot Card Drawings/Strength.png",
-          title: "Chariot"
-        },
-        {
-          path: "/Assets/Random Art/Tarot Card Drawings/Chariot.png",
+          path: "/Asset/Random Art/Tarot Drawings/Strength.png",
           title: "Strength"
         },
         {
-          path: "/Assets/Random Art/Tarot Card Drawings/Wheel.png",
+          path: "/Asset/Random Art/Tarot Drawings/Chariot.png",
+          title: "Chariot"
+        },
+        {
+          path: "/Asset/Random Art/Tarot Drawings/Wheel.png",
           title: "Wheel of Fortune"
         },
         {
-          path: "/Assets/Random Art/Tarot Card Drawings/Hermit.png",
+          path: "/Asset/Random Art/Tarot Drawings/Hermit.png",
           title: "Hermit"
         }
       ]
@@ -51,7 +51,7 @@ function Creations() {
       title: "Posters",
       description: "Soft Rain Poster",
       type: "image",
-      imagePath: "/Assets/Random Art/Posters/Soft Rains.png",
+      imagePath: "/Asset/Random Art/Posters/Soft.png",
       imageTitle: "Soft Rains"
     }
   ];
@@ -143,15 +143,15 @@ function Creations() {
   };
 
   return (
-    <div className="paper container art-container">
-      <h2 className="art-header">Random Art</h2>
+    <div className="paper section">
+      <h2 className="title">Random Art</h2>
       <p className="art-intro">
         Explore my collection of artistic creations across different mediums and styles. Each project represents a unique exploration of visual storytelling.
       </p>
       
       <div className="art-projects">
         {artProjects.map((project) => (
-          <div key={project.id} className="art-project-card paper">
+          <div key={project.id} className="card art-project-card">
             <h3 className="art-project-title">{project.title}</h3>
             <p className="art-project-description">{project.description}</p>
             

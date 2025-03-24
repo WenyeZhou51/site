@@ -1,7 +1,5 @@
 .about-me-container {
-  padding: 2rem;
-  margin-top: 4rem;
-  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .about-content {
@@ -21,32 +19,32 @@
   height: 250px;
   border-radius: 50%;
   object-fit: cover;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.2);
   border: 5px solid #f0f0f0;
 }
 
 .bio-text {
   margin-bottom: 2rem;
+  width: 100%;
+  max-width: 600px;
 }
 
-.bio-text h2 {
+.bio-text h3 {
   margin-bottom: 1rem;
-  font-size: 2.5rem;
-  color: #41403e;
+  font-size: 1.8rem;
+  color: var(--primary);
 }
 
 .bio-text p {
   font-size: 1.2rem;
   line-height: 1.6;
   color: #555;
-  max-width: 600px;
-  margin: 0 auto;
 }
 
 /* Media queries for responsiveness */
 @media (min-width: 768px) {
   .about-content {
-    padding: 2rem;
+    padding: 1rem;
   }
 }
 
@@ -56,8 +54,8 @@
     height: 200px;
   }
   
-  .bio-text h2 {
-    font-size: 2rem;
+  .bio-text h3 {
+    font-size: 1.5rem;
   }
   
   .bio-text p {
