@@ -21,7 +21,7 @@ const Navbar = () => {
   return (
     <nav className="paper-navbar">
       <div className="nav-brand">
-        <h3><Link to="/">Portfolio</Link></h3>
+        <h3><Link to="/about-me">About Me</Link></h3>
       </div>
       <div className="collapsible">
         <input type="checkbox" id="menu-toggle" checked={checked} onChange={toggleMenu} />
@@ -32,9 +32,9 @@ const Navbar = () => {
         </label>
         <div className={`collapsible-body ${isOpen ? 'open' : ''}`}>
           <ul className="inline">
-            <li><Link to="/about-me">About Me</Link></li>
             <li><Link to="/games">Games</Link></li>
             <li><Link to="/rpg-campaigns">RPG Campaigns</Link></li>
+            <li><Link to="/code-projects">Fun Code Projects</Link></li>
             <li><Link to="/random-art">Random Art</Link></li>
           </ul>
         </div>
