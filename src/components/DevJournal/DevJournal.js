@@ -7,7 +7,7 @@ function DevJournal() {
       <div className="about-content">
         <h2 className="about-title">RPG Campaigns</h2>
         <p className="campaign-intro">
-          Explore my custom tabletop RPG campaigns, each featuring unique worlds, characters, and adventures for your gaming sessions.
+          A series of custom Role Playing Game campaigns I have written
         </p>
         
         <div className="campaigns-list">

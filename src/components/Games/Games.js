@@ -9,7 +9,7 @@ const Games = () => {
       id: '雪骤山庄',
       name: '雪骤山庄',
       thumbnailPath: '/Asset/Games/雪骤山庄/thumbnail.png',
-      description: 'A thrilling mystery game set in a snowy mountain manor. Players must uncover the secrets hidden within the walls of 雪骤山庄 (Snow Rush Manor) and solve the puzzles before time runs out.'
+      description: 'A Live Action Role Playing game scenario I wrote for 5 players. Involving two locked-room murder mysteries and a killer hiding amongst the players. Complete with character scripts and evidence cards.'
     }
     // More games can be added here later
   ];
@@ -18,7 +18,7 @@ const Games = () => {
     <div className="games-container">
       <h2 className="about-title">Games</h2>
       <div className="games-intro">
-        <p>Explore a collection of immersive tabletop and digital games. Each game offers a unique experience with its own storyline, characters, and challenges.</p>
+        <p>A collection of videogames and tabletop games I have created</p>
       </div>
       
       <div className="games-grid">

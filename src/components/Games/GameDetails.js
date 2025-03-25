@@ -14,8 +14,8 @@ function GameDetails() {
       setGameDetails({
         id: '雪骤山庄',
         name: '雪骤山庄',
-        description: 'A thrilling mystery game set in a snowy mountain manor. Players must uncover the secrets hidden within the walls of 雪骤山庄 (Snow Rush Manor) and solve the puzzles before time runs out.',
-        longDescription: 'In this immersive tabletop experience, players are invited to the isolated Snow Rush Manor deep in the mountains. What begins as a pleasant gathering quickly turns mysterious as strange events unfold. Each player takes on the role of a character with unique abilities and motivations. Work together to investigate clues, solve puzzles, and reveal the truth before it\'s too late.',
+        description: 'A Live Action Role Playing game scenario I wrote for 5 players. Involving two locked-room murder mysteries and a killer hiding amongst the players. Complete with character scripts and evidence cards.',
+        longDescription: 'Five people gathers in the Snowbound Villa to celebrate the birthday of the Villa Owner, Xue Ao Qing. The unassuming celebration is interrupted the discovery of two names etched onto the coffin with the ominous message "Death by water". Snow falls, and the declaration soon comes true at night, with the two victims found dead in their locked rooms.',
         thumbnailPath: '/Asset/Games/雪骤山庄/thumbnail.png',
         files: [
           {
@@ -26,7 +26,7 @@ function GameDetails() {
           {
             name: '雪骤山庄线索.pdf',
             path: '/Asset/Games/雪骤山庄/雪骤山庄线索.pdf',
-            description: 'Clues and puzzles for the game'
+            description: 'Clue cards for the game'
           }
         ]
       });

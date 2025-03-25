@@ -147,7 +147,7 @@ function Creations() {
       <div className="about-content">
         <h2 className="about-title">Random Art</h2>
         <p className="art-intro">
-          Explore my collection of artistic creations across different mediums and styles. Each project represents a unique exploration of visual storytelling.
+          A collection of my drawings, paintings, and other artistic creations
         </p>
         
         <div className="art-projects">
