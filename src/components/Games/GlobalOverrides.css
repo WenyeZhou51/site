@@ -1,0 +1,38 @@
+/* Global overrides for PaperCSS to fix issues with Chinese characters */
+[lang="zh"],
+[lang="zh-CN"],
+[lang="zh-TW"] {
+  border-bottom: none !important;
+  text-decoration: none !important;
+  box-shadow: none !important;
+  background-image: none !important;
+}
+
+/* Override any PaperCSS styles that might affect Chinese titles */
+h1, h2, h3, h4, h5, h6 {
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+/* Override PaperCSS link styles that might be affecting headings */
+a:not(.btn):not(.btn-danger) {
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+/* Fix for blue underline in Chinese text */
+.paper h1, .paper h2, .paper h3, .paper h4, .paper h5, .paper h6 {
+  border-bottom: none !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
+}
+
+/* Special fix for 雪骤山庄 text */
+h2:contains('雪骤山庄'),
+h3:contains('雪骤山庄') {
+  border-bottom: none !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
+} 

@@ -6,7 +6,9 @@
   margin: 0;
   padding: 3rem 2rem;
   background: #ffffff;
-  border-top: 4px solid #4285f4;
+  border-top: 3px solid #000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease;
 }
 
 .about-content {
@@ -19,7 +21,7 @@
 }
 
 .about-title {
-  font-family: 'Permanent Marker', 'Arial', sans-serif;
+  font-family: 'Shadows Into Light', 'Comic Neue', 'Arial', sans-serif;
   font-size: 3rem;
   color: #333;
   margin-bottom: 2.5rem;
@@ -34,8 +36,8 @@
   left: 50%;
   transform: translateX(-50%);
   width: 130%;
-  height: 2px;
-  background: repeating-linear-gradient(to right, transparent, transparent 4px, #333 4px, #333 8px);
+  height: 3px;
+  background: #000;
 }
 
 /* Clean portrait styling - larger size */
@@ -44,6 +46,11 @@
   width: 350px;
   height: 350px;
   margin: 0 auto 3rem;
+  transition: transform 0.2s ease;
+}
+
+.portrait-container:hover {
+  transform: scale(1.02);
 }
 
 .portrait {
@@ -51,7 +58,7 @@
   height: 100%;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid #f0f0f0;
+  border: 3px solid #222;
 }
 
 /* Remove paint splash effects */
@@ -67,18 +74,18 @@
 
 /* Making name-tag match bio styling */
 .name-tag {
-  font-family: 'Open Sans', 'Helvetica', sans-serif;
-  font-size: 1.1rem;
+  font-family: 'Indie Flower', 'Comic Neue', 'Helvetica', sans-serif;
+  font-size: 1.2rem;
   font-weight: normal;
-  color: #555;
+  color: #333;
   margin-bottom: 1.5rem;
 }
 
 .bio {
-  font-family: 'Open Sans', 'Helvetica', sans-serif;
+  font-family: 'Patrick Hand', 'Comic Neue', 'Helvetica', sans-serif;
   font-size: 1.1rem;
   line-height: 1.7;
-  color: #555;
+  color: #333;
   margin: 0 auto;
 }
 

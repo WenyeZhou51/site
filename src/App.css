@@ -51,11 +51,26 @@
 
 /* Paper CSS theme customization */
 :root {
-  --primary: #41403e;
-  --secondary: #0071de;
+  --primary: #000000;
+  --secondary: #333333;
 }
 
 .paper {
   background-color: #f8f8f8;
   border-radius: 0.2rem;
+  transition: all 0.2s ease;
+}
+
+.paper:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Add subtle hover effects for all clickable elements */
+a, button {
+  transition: all 0.2s ease;
+}
+
+a:hover, button:hover {
+  transform: translateY(-1px);
 }

@@ -1,0 +1,306 @@
+.game-details-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.game-details-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.back-link {
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  text-decoration: none;
+  color: #333;
+  font-family: 'Patrick Hand', 'Comic Neue', sans-serif;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+}
+
+.back-link:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  transform: translateX(-3px);
+}
+
+.about-title {
+  font-family: 'Shadows Into Light', 'Comic Neue', 'Arial', sans-serif;
+  font-size: 3rem;
+  color: #333;
+  margin-bottom: 2.5rem;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  border-bottom: none !important;
+  text-decoration: none !important;
+  background-image: none !important;
+  background: none !important;
+  box-shadow: none !important;
+}
+
+/* Override PaperCSS default styling for Chinese characters */
+.about-title:lang(zh),
+.about-title:lang(zh-CN),
+.about-title:lang(zh-TW) {
+  border-bottom: none !important;
+  box-shadow: none !important;
+  background: none !important;
+  text-decoration: none !important;
+}
+
+/* Custom underline that doesn't interfere with Chinese text */
+.about-title::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;  /* Moved further down to avoid overlapping with any text */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 130%;
+  height: 3px;
+  background: #000;
+  text-decoration: none !important;
+  z-index: 1;
+}
+
+.game-details-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.game-main-image {
+  width: 100%;
+  max-height: 450px;
+  overflow: hidden;
+  border: 3px solid #222;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  max-width: 800px;
+}
+
+.game-cover-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.game-subtitle {
+  font-family: 'Indie Flower', 'Comic Neue', 'Helvetica', sans-serif;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #333;
+  position: relative;
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.game-subtitle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #000;
+}
+
+.game-description-container {
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.game-long-description {
+  font-family: 'Patrick Hand', 'Comic Neue', 'Helvetica', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.game-files-section {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.game-files-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.game-file-card {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border: 2px solid #222;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: #fff;
+}
+
+.game-file-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+.game-file-card.active {
+  border-color: #000;
+  background-color: rgba(0,0,0,0.05);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+
+.file-icon {
+  background-color: #000;
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Patrick Hand', 'Comic Neue', sans-serif;
+  font-weight: bold;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.file-info {
+  flex-grow: 1;
+}
+
+.file-name {
+  font-family: 'Patrick Hand', 'Comic Neue', sans-serif;
+  font-size: 1.1rem;
+  color: #333;
+  margin: 0 0 0.5rem 0;
+}
+
+.file-description {
+  font-family: 'Patrick Hand', 'Comic Neue', sans-serif;
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0;
+}
+
+.game-preview-section {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.pdf-preview-container {
+  width: 100%;
+  height: 600px;
+  margin-top: 1.5rem;
+  border: 2px solid #222;
+  overflow: hidden;
+}
+
+.pdf-viewer {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.pdf-fallback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 2rem;
+  background-color: #f5f5f5;
+  text-align: center;
+  font-family: 'Patrick Hand', 'Comic Neue', sans-serif;
+}
+
+.pdf-fallback a {
+  margin-top: 1rem;
+  color: #000;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.game-not-found {
+  text-align: center;
+  font-family: 'Patrick Hand', 'Comic Neue', sans-serif;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+}
+
+.btn-game {
+  display: inline-block;
+  padding: 0.6rem 1.5rem;
+  background: none;
+  border: 2px solid #000;
+  color: #000;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  text-align: center;
+  font-family: 'Patrick Hand', 'Comic Neue', sans-serif;
+  margin-top: 1.5rem;
+}
+
+.btn-game:hover {
+  background-color: #000;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .about-title {
+    font-size: 2.5rem;
+    margin-top: 1.5rem;
+  }
+  
+  .game-subtitle {
+    font-size: 1.5rem;
+  }
+  
+  .game-long-description {
+    font-size: 1.1rem;
+  }
+  
+  .game-files-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .pdf-preview-container {
+    height: 500px;
+  }
+}
+
+@media (max-width: 480px) {
+  .game-details-container {
+    padding: 1.5rem 1rem;
+  }
+  
+  .about-title {
+    font-size: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .game-subtitle {
+    font-size: 1.3rem;
+  }
+  
+  .pdf-preview-container {
+    height: 400px;
+  }
+} 

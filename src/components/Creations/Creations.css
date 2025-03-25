@@ -1,6 +1,6 @@
 /* Main container - match AboutMe styling */
 .about-title {
-  font-family: 'Permanent Marker', 'Arial', sans-serif;
+  font-family: 'Shadows Into Light', 'Comic Neue', 'Arial', sans-serif;
   font-size: 3rem;
   color: #333;
   margin-bottom: 2.5rem;
@@ -16,8 +16,8 @@
   left: 50%;
   transform: translateX(-50%);
   width: 130%;
-  height: 2px;
-  background: repeating-linear-gradient(to right, transparent, transparent 4px, #333 4px, #333 8px);
+  height: 3px;
+  background: #000;
 }
 
 .art-container {
@@ -36,8 +36,8 @@
   max-width: 800px;
   margin: 0 auto 3rem;
   font-size: 1.1rem;
-  color: #555;
-  font-family: 'Open Sans', 'Helvetica', sans-serif;
+  color: #333;
+  font-family: 'Patrick Hand', 'Comic Neue', 'Helvetica', sans-serif;
 }
 
 .art-projects {
@@ -52,26 +52,32 @@
   background-color: #ffffff;
   padding: 2rem;
   margin-bottom: 2.5rem;
-  border-top: 4px solid #4285f4;
+  border-top: 3px solid #000;
   width: 100%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease;
+}
+
+.art-project-card:hover {
+  transform: translateY(-2px);
 }
 
 .art-project-title {
   font-size: 1.8rem;
   margin-bottom: 1rem;
   color: #333;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #000;
   padding-bottom: 0.8rem;
-  font-family: 'Open Sans', 'Helvetica', sans-serif;
+  font-family: 'Indie Flower', 'Comic Neue', 'Helvetica', sans-serif;
   font-weight: 600;
 }
 
 .art-project-description {
-  font-family: 'Open Sans', 'Helvetica', sans-serif;
+  font-family: 'Patrick Hand', 'Comic Neue', 'Helvetica', sans-serif;
   font-size: 1.1rem;
   margin-bottom: 2rem;
   line-height: 1.6;
-  color: #555;
+  color: #333;
 }
 
 .art-project-content {
@@ -176,7 +182,7 @@
 .gallery-thumbnail {
   width: 100px;
   height: 100px;
-  border: 2px solid #e0e0e0;
+  border: 2px solid #222;
   border-radius: 4px;
   overflow: hidden;
   cursor: pointer;
@@ -185,11 +191,13 @@
 
 .gallery-thumbnail:hover {
   transform: translateY(-3px);
-  border-color: #4285f4;
+  border-color: #000;
+  box-shadow: 0 3px 5px rgba(0,0,0,0.1);
 }
 
 .gallery-thumbnail.active {
-  border-color: #4285f4;
+  border-color: #000;
+  box-shadow: 0 0 0 2px rgba(0,0,0,0.2);
 }
 
 .gallery-thumbnail img {
@@ -211,28 +219,31 @@
   display: inline-block;
   padding: 0.5rem 1.5rem;
   background: none;
-  border: 2px solid #4285f4;
-  color: #4285f4;
+  border: 2px solid #000;
+  color: #000;
   font-weight: 500;
   text-decoration: none;
   border-radius: 4px;
   transition: all 0.3s ease;
   min-width: 120px;
   text-align: center;
+  font-family: 'Patrick Hand', 'Comic Neue', sans-serif;
 }
 
 .art-actions a:hover {
-  background-color: #4285f4;
+  background-color: #000;
   color: white;
+  transform: translateY(-2px);
 }
 
 .art-actions a.btn-primary {
-  background-color: #4285f4;
+  background-color: #000;
   color: white;
 }
 
 .art-actions a.btn-primary:hover {
-  background-color: #2d76e7;
+  background-color: #333;
+  transform: translateY(-2px);
 }
 
 /* Responsive adjustments */
