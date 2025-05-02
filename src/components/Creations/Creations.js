@@ -17,15 +17,31 @@ function Creations() {
   const artProjects = [
     {
       id: "journal-comic",
-      title: "Journal Comic",
-      description: "Journal comic, 2024",
+      title: "Journal Comic, 2024",
+      description: "",
       type: "pdf",
       pdfPath: "/Asset/Random Art/Journal Comic/Tim_Book_cut.pdf",
     },
     {
+      id: "memory-dream",
+      title: "Memory and Dream, 2024",
+      description: "",
+      type: "dual-image",
+      images: [
+        {
+          path: "/Asset/Random Art/Memory and Dream/Memory.jpg",
+          title: "Memory, Monotype"
+        },
+        {
+          path: "/Asset/Random Art/Memory and Dream/Dream.jpg",
+          title: "Dream, Relief"
+        }
+      ]
+    },
+    {
       id: "tarot-cards",
-      title: "Tarot Card Drawings",
-      description: "Tarot Cards, 2025",
+      title: "Tarot Cards, 2025",
+      description: "",
       type: "gallery",
       images: [
         {
@@ -48,8 +64,8 @@ function Creations() {
     },
     {
       id: "posters",
-      title: "Posters",
-      description: "Soft Rain Poster",
+      title: "Soft Rains Poster, 2025",
+      description: "",
       type: "image",
       imagePath: "/Asset/Random Art/Posters/Soft.png",
       imageTitle: "Soft Rains"
@@ -105,6 +121,30 @@ function Creations() {
           </div>
         );
       
+      case 'dual-image':
+        return (
+          <div className="art-dual-image-container">
+            <div className="dual-image-wrapper">
+              <div className="dual-image-item">
+                <img 
+                  src={process.env.PUBLIC_URL + project.images[0].path} 
+                  alt={project.images[0].title} 
+                  className="art-dual-image"
+                />
+                <div className="image-caption">{project.images[0].title}</div>
+              </div>
+              <div className="dual-image-item">
+                <img 
+                  src={process.env.PUBLIC_URL + project.images[1].path} 
+                  alt={project.images[1].title} 
+                  className="art-dual-image"
+                />
+                <div className="image-caption">{project.images[1].title}</div>
+              </div>
+            </div>
+          </div>
+        );
+      
       case 'gallery':
         // Get current active image index or default to 0
         const currentIndex = activeImageIndex[project.id] || 0;
@@ -145,7 +185,7 @@ function Creations() {
   return (
     <div className="about-canvas">
       <div className="about-content">
-        <h2 className="about-title">Random Art</h2>
+        <h2 className="about-title">Art Showcase</h2>
         <p className="art-intro">
           A collection of my drawings, paintings, and other artistic creations
         </p>

@@ -35,7 +35,7 @@ const Navbar = () => {
             <li><Link to="/games">Games</Link></li>
             <li><Link to="/rpg-campaigns">RPG Campaigns</Link></li>
             <li><Link to="/code-projects">Fun Code Projects</Link></li>
-            <li><Link to="/random-art">Random Art</Link></li>
+            <li><Link to="/random-art">Art Showcase</Link></li>
           </ul>
         </div>
       </div>
