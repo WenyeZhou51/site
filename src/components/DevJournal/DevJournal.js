@@ -12,10 +12,10 @@ function DevJournal() {
         
         <div className="campaigns-list">
           <div className="campaign-card">
-            <h3 className="campaign-title">Forgotten Realms Campaign</h3>
+            <h3 className="campaign-title">Red, Call of Cthulhu custom scenario</h3>
             <p className="campaign-description">
-              A custom Dungeons & Dragons campaign set in the Forgotten Realms. 
-              This campaign features unique characters, custom maps, and an original storyline.
+              A custom Call of Cthulhu scenario I wrote for 3-6 investigators set in the 1920 Rhode Island. 
+              Playtime is 20 hours. Scenario is set in the same universe as "Blue".
             </p>
             
             <div className="campaign-preview">
@@ -50,10 +50,11 @@ function DevJournal() {
           </div>
           
           <div className="campaign-card">
-            <h3 className="campaign-title">Cyberpunk Adventure</h3>
+            <h3 className="campaign-title">Blue, Call of Cthulhu custom scenario</h3>
             <p className="campaign-description">
-              A futuristic campaign using the Cyberpunk RED system. 
-              Explore a dystopian future filled with corporate intrigue and technological wonders.
+              A custom Call of Cthulhu scenario I wrote for 3-6 investigators set in the 1920 Kingsport. 
+              Playtime is 20 hours. Scenario is set in the same universe as "Red". I wrote the scenario 
+              in Chinese and has not finished translating it, so now it's the Chinese version.
             </p>
             
             <div className="campaign-preview">

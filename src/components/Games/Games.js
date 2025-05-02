@@ -3,13 +3,19 @@ import { Link } from 'react-router-dom';
 import './Games.css';
 
 const Games = () => {
-  // For now, we're only implementing the 雪骤山庄 game as requested
+  // Games collection
   const games = [
     {
       id: '雪骤山庄',
       name: '雪骤山庄',
       thumbnailPath: '/Asset/Games/雪骤山庄/thumbnail.png',
       description: 'A Live Action Role Playing game scenario I wrote for 5 players. Involving two locked-room murder mysteries and a killer hiding amongst the players. Complete with character scripts and evidence cards.'
+    },
+    {
+      id: 'Arcana',
+      name: 'Arcana',
+      thumbnailPath: '/Asset/Games/Arcana/10x7 world deck market.png',
+      description: 'Arcana is a 2-4 player deck building game where players start from a set of basic cards and modify their deck to generate gold, slay monsters, and attain the arcane truth of the universe. The game format is similar to Dominion and Ascension.'
     }
     // More games can be added here later
   ];
