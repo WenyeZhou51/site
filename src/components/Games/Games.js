@@ -15,7 +15,7 @@ const Games = () => {
       id: '雾海',
       name: '雾海',
       thumbnailPath: '/Asset/Games/雾海/thumbnail.png',
-      description: 'A Live Action Role Playing game scenario I wrote for multiple players. Set in a mysterious fog-covered sea environment. Complete with character scripts and evidence cards.'
+      description: 'A Live Action Role Playing game scenario I wrote for 5 players. Set in a mysterious fog-covered sea environment. Complete with character scripts and evidence cards.'
     },
     {
       id: 'Arcana',
