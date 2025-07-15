@@ -52,9 +52,10 @@ function DevJournal() {
           <div className="campaign-card">
             <h3 className="campaign-title">Blue, Call of Cthulhu custom scenario</h3>
             <p className="campaign-description">
-              A custom Call of Cthulhu scenario I wrote for 3-6 investigators set in the 1920 Kingsport. 
-              Playtime is 20 hours. Scenario is set in the same universe as "Red". I wrote the scenario 
-              in Chinese and has not finished translating it, so now it's the Chinese version.
+              A custom Call of Cthulhu scenario I wrote for 3-6 investigators set in the 1920 Kingsport, 
+              where investigators investigate the town's mysteries surrounding "Cerulean it". Playtime is 20 hours. 
+              Scenario is set in the same universe as "Red". I wrote the scenario in Chinese and has not finished 
+              translating it, so here are my campaign notes in Chinese.
             </p>
             
             <div className="campaign-preview">

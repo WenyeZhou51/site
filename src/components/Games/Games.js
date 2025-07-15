@@ -12,6 +12,12 @@ const Games = () => {
       description: 'A Live Action Role Playing game scenario I wrote for 5 players. Involving two locked-room murder mysteries and a killer hiding amongst the players. Complete with character scripts and evidence cards.'
     },
     {
+      id: '雾海',
+      name: '雾海',
+      thumbnailPath: '/Asset/Games/雾海/thumbnail.png',
+      description: 'A Live Action Role Playing game scenario I wrote for multiple players. Set in a mysterious fog-covered sea environment. Complete with character scripts and evidence cards.'
+    },
+    {
       id: 'Arcana',
       name: 'Arcana',
       thumbnailPath: '/Asset/Games/Arcana/10x7 world deck market.png',

@@ -33,6 +33,28 @@ function GameDetails() {
       });
       // Set the first file as default selected
       setSelectedFile('/Asset/Games/雪骤山庄/雪骤山庄人物剧本.pdf');
+    } else if (gameId === '雾海') {
+      setGameDetails({
+        id: '雾海',
+        name: '雾海',
+        description: 'A Live Action Role Playing game scenario I wrote for multiple players. Set in a mysterious fog-covered sea environment. Complete with character scripts and evidence cards.',
+        longDescription: 'A Life Action Role Playing game for 5 people lasting 6-8 hours. The town of "Wandering Rocks" sits next to a cursed sea with leviathans in the waters and socerers in the streets. In this town, a ship sets sail with 13 passengers. Passengers are found dead one by one, each with a tarot card in their pocket belonging to a certain dead socerer...',
+        thumbnailPath: '/Asset/Games/雾海/thumbnail.png',
+        files: [
+          {
+            name: '雾海剧本7月15.pdf',
+            path: '/Asset/Games/雾海/雾海剧本7月15.pdf',
+            description: 'Character scripts and roles for the game'
+          },
+          {
+            name: '雾海线索7月15.pdf',
+            path: '/Asset/Games/雾海/雾海线索7月15.pdf',
+            description: 'Clue cards for the game'
+          }
+        ]
+      });
+      // Set the first file as default selected
+      setSelectedFile('/Asset/Games/雾海/雾海剧本7月15.pdf');
     } else if (gameId === 'Arcana') {
       setGameDetails({
         id: 'Arcana',
