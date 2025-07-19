@@ -32,9 +32,9 @@ const Navbar = () => {
         </label>
         <div className={`collapsible-body ${isOpen ? 'open' : ''}`}>
           <ul className="inline">
-            <li><Link to="/games">Games</Link></li>
+            <li><Link to="/games">Boardgames</Link></li>
             <li><Link to="/rpg-campaigns">RPG Campaigns</Link></li>
-            <li><Link to="/code-projects">Fun Code Projects</Link></li>
+            <li><Link to="/code-projects">Videogames</Link></li>
             <li><Link to="/random-art">Art Showcase</Link></li>
           </ul>
         </div>

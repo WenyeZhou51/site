@@ -17,91 +17,113 @@ function GameDetails() {
         name: '雪骤山庄',
         description: 'A Live Action Role Playing game scenario I wrote for 5 players. Involving two locked-room murder mysteries and a killer hiding amongst the players. Complete with character scripts and evidence cards.',
         longDescription: 'Five people gathers in the Snowbound Villa to celebrate the birthday of the Villa Owner, Xue Ao Qing. The unassuming celebration is interrupted the discovery of two names etched onto the coffin with the ominous message "Death by water". Snow falls, and the declaration soon comes true at night, with the two victims found dead in their locked rooms.',
-        thumbnailPath: '/Asset/Games/雪骤山庄/thumbnail.png',
+        thumbnailPath: process.env.PUBLIC_URL + '/Asset/Games/雪骤山庄/thumbnail.png',
         files: [
           {
             name: '雪骤山庄人物剧本.pdf',
-            path: '/Asset/Games/雪骤山庄/雪骤山庄人物剧本.pdf',
+            path: process.env.PUBLIC_URL + '/Asset/Games/雪骤山庄/雪骤山庄人物剧本.pdf',
             description: 'Character scripts and roles for the game'
           },
           {
             name: '雪骤山庄线索.pdf',
-            path: '/Asset/Games/雪骤山庄/雪骤山庄线索.pdf',
+            path: process.env.PUBLIC_URL + '/Asset/Games/雪骤山庄/雪骤山庄线索.pdf',
             description: 'Clue cards for the game'
           }
         ]
       });
       // Set the first file as default selected
-      setSelectedFile('/Asset/Games/雪骤山庄/雪骤山庄人物剧本.pdf');
+      setSelectedFile(process.env.PUBLIC_URL + '/Asset/Games/雪骤山庄/雪骤山庄人物剧本.pdf');
     } else if (gameId === '雾海') {
       setGameDetails({
         id: '雾海',
         name: '雾海',
         description: 'A Live Action Role Playing game scenario I wrote for multiple players. Set in a mysterious fog-covered sea environment. Complete with character scripts and evidence cards.',
         longDescription: 'A Life Action Role Playing game for 5 people lasting 6-8 hours. The town of "Wandering Rocks" sits next to a cursed sea with leviathans in the waters and socerers in the streets. In this town, a ship sets sail with 13 passengers. Passengers are found dead one by one, each with a tarot card in their pocket belonging to a certain dead socerer...',
-        thumbnailPath: '/Asset/Games/雾海/thumbnail.png',
+        thumbnailPath: process.env.PUBLIC_URL + '/Asset/Games/雾海/thumbnail.png',
         files: [
           {
             name: '雾海剧本7月15.pdf',
-            path: '/Asset/Games/雾海/雾海剧本7月15.pdf',
+            path: process.env.PUBLIC_URL + '/Asset/Games/雾海/雾海剧本7月15.pdf',
             description: 'Character scripts and roles for the game'
           },
           {
             name: '雾海线索7月15.pdf',
-            path: '/Asset/Games/雾海/雾海线索7月15.pdf',
+            path: process.env.PUBLIC_URL + '/Asset/Games/雾海/雾海线索7月15.pdf',
             description: 'Clue cards for the game'
           }
         ]
       });
       // Set the first file as default selected
-      setSelectedFile('/Asset/Games/雾海/雾海剧本7月15.pdf');
+      setSelectedFile(process.env.PUBLIC_URL + '/Asset/Games/雾海/雾海剧本7月15.pdf');
     } else if (gameId === 'Arcana') {
       setGameDetails({
         id: 'Arcana',
         name: 'Arcana',
         description: 'Arcana is a 2-4 player deck building game where players start from a set of basic cards and modify their deck to generate gold, slay monsters, and attain the arcane truth of the universe. The game format is similar to Dominion and Ascension.',
         longDescription: 'Arcana is a 2-4 player deck building game where players start from a set of basic cards and modify their deck to generate gold, slay monsters, and attain the arcane truth of the universe. The game format is similar to Dominion and Ascension.',
-        thumbnailPath: '/Asset/Games/Arcana/10x7 world deck market.png',
+        thumbnailPath: process.env.PUBLIC_URL + '/Asset/Games/Arcana/10x7 world deck market.png',
         rules: {
           name: 'Rulebook.pdf',
-          path: '/Asset/Games/Arcana/Rulebook.pdf',
+          path: process.env.PUBLIC_URL + '/Asset/Games/Arcana/Rulebook.pdf',
           description: 'Complete game rules and setup instructions'
         },
         files: [
           {
             name: 'BloodMagicBasicCards.pdf',
-            path: '/Asset/Games/Arcana/BloodMagicBasicCards.pdf',
+            path: process.env.PUBLIC_URL + '/Asset/Games/Arcana/BloodMagicBasicCards.pdf',
             description: 'Basic Blood Magic cards for the game'
           },
           {
             name: 'Market Cards',
-            path: '/Asset/Games/Arcana/10x7 world deck market.png',
+            path: process.env.PUBLIC_URL + '/Asset/Games/Arcana/10x7 world deck market.png',
             description: 'Market cards available for purchase'
           },
           {
             name: 'Market Cards Set 2',
-            path: '/Asset/Games/Arcana/10x7 world deck market 2.png',
+            path: process.env.PUBLIC_URL + '/Asset/Games/Arcana/10x7 world deck market 2.png',
             description: 'Additional market cards for expanded gameplay'
           },
           {
             name: 'Monster Cards',
-            path: '/Asset/Games/Arcana/10x3 world deck monster.png',
+            path: process.env.PUBLIC_URL + '/Asset/Games/Arcana/10x3 world deck monster.png',
             description: 'Monster cards to battle during play'
           },
           {
             name: 'Monster Card Backs',
-            path: '/Asset/Games/Arcana/10x3 world deck monster back.png',
+            path: process.env.PUBLIC_URL + '/Asset/Games/Arcana/10x3 world deck monster back.png',
             description: 'Monster card backs'
           },
           {
             name: 'Attack Cards',
-            path: '/Asset/Games/Arcana/10x3 world deck attacks.png',
+            path: process.env.PUBLIC_URL + '/Asset/Games/Arcana/10x3 world deck attacks.png',
             description: 'Attack cards for combat'
           }
         ]
       });
       // Set the first file as default selected
-      setSelectedFile('/Asset/Games/Arcana/Rulebook.pdf');
+      setSelectedFile(process.env.PUBLIC_URL + '/Asset/Games/Arcana/Rulebook.pdf');
+    } else if (gameId === 'CAPACITOR') {
+      setGameDetails({
+        id: 'CAPACITOR',
+        name: 'CAPACITOR',
+        description: 'A collaborative multiplayer horror game where players scavenge an abandoned industrial complex for parts as the electricity depletes...',
+        longDescription: 'A collaborative multiplayer horror game where players scavenge an abandoned industrial complex for parts as the electricity depletes. The game creates a tense atmosphere as players must work together while the power slowly fades, creating an increasingly dangerous environment.',
+        videoUrl: 'https://www.youtube.com/embed/OBx0AlWrRVo?start=4',
+        githubUrl: 'https://github.com/WenyeZhou51/CAPACITOR',
+        thumbnailPath: process.env.PUBLIC_URL + '/Asset/CodeProjects/Capacitor/placeholder.png'
+      });
+      setSelectedFile(null); // Videogames don't need file selection
+    } else if (gameId === 'THE-HOLLOWS') {
+      setGameDetails({
+        id: 'THE-HOLLOWS',
+        name: 'THE HOLLOWS',
+        description: 'A 2D JRPG where the main character and their party ventures into the hollows to save the world and fall the obelisk',
+        longDescription: 'A 2D JRPG where the main character and their party ventures into the hollows to save the world and fall the obelisk. This classic-style role-playing game features turn-based combat, character progression, and an immersive story-driven experience.',
+        videoUrl: 'https://www.youtube.com/embed/w4s7HLy6IOY',
+        githubUrl: 'https://github.com/WenyeZhou51/The-Hollows',
+        thumbnailPath: process.env.PUBLIC_URL + '/Asset/CodeProjects/The Hollows/placeholder.png'
+      });
+      setSelectedFile(null); // Videogames don't need file selection
     }
   }, [gameId]);
 
@@ -122,7 +144,8 @@ function GameDetails() {
         <h2 className="about-title">Game Not Found</h2>
         <div className="game-not-found">
           <p>Sorry, the game you're looking for doesn't exist or hasn't been implemented yet.</p>
-          <Link to="/games" className="btn-game">Back to Games</Link>
+          <Link to="/games" className="btn-game">Back to Boardgames</Link>
+          <Link to="/code-projects" className="btn-game">Back to Videogames</Link>
         </div>
       </div>
     );
@@ -131,40 +154,72 @@ function GameDetails() {
   return (
     <div className="game-details-container">
       <div className="game-details-header">
-        <Link to="/games" className="back-link">
-          ← Back to Games
+        <Link to={gameDetails.videoUrl ? "/code-projects" : "/games"} className="back-link">
+          ← Back to {gameDetails.videoUrl ? "Videogames" : "Boardgames"}
         </Link>
         <h2 className="about-title" lang="zh-CN">{gameDetails.name}</h2>
       </div>
 
       <div className="game-details-content">
-        <div className="game-main-image">
-          {gameDetails.thumbnailPath.endsWith('.pdf') ? (
-            <object
-              data={gameDetails.thumbnailPath}
-              type="application/pdf"
-              className="game-cover-pdf"
-            >
-              <p className="pdf-fallback">
-                It appears your browser doesn't support embedded PDFs.
-                <a href={gameDetails.thumbnailPath} target="_blank" rel="noopener noreferrer">
-                  Click here to view the thumbnail
-                </a>
-              </p>
-            </object>
-          ) : (
-            <img 
-              src={gameDetails.thumbnailPath} 
-              alt={`${gameDetails.name} cover`} 
-              className="game-cover-image" 
-            />
-          )}
-        </div>
+        {gameDetails.videoUrl ? (
+          <div className="game-video-section">
+            <h3 className="game-subtitle">Game Preview</h3>
+            <div className="game-video-container">
+              <iframe
+                src={gameDetails.videoUrl}
+                title={`${gameDetails.name} preview`}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="game-video"
+              ></iframe>
+            </div>
+          </div>
+        ) : (
+          <div className="game-main-image">
+            {gameDetails.thumbnailPath.endsWith('.pdf') ? (
+              <object
+                data={gameDetails.thumbnailPath}
+                type="application/pdf"
+                className="game-cover-pdf"
+              >
+                <p className="pdf-fallback">
+                  It appears your browser doesn't support embedded PDFs.
+                  <a href={gameDetails.thumbnailPath} target="_blank" rel="noopener noreferrer">
+                    Click here to view the thumbnail
+                  </a>
+                </p>
+              </object>
+            ) : (
+              <img 
+                src={gameDetails.thumbnailPath} 
+                alt={`${gameDetails.name} cover`} 
+                className="game-cover-image" 
+              />
+            )}
+          </div>
+        )}
 
         <div className="game-description-container">
           <h3 className="game-subtitle">About the Game</h3>
           <p className="game-long-description">{gameDetails.longDescription}</p>
         </div>
+
+        {gameDetails.githubUrl && (
+          <div className="game-github-section">
+            <h3 className="game-subtitle">Source Code</h3>
+            <div className="github-link-container">
+              <a 
+                href={gameDetails.githubUrl} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="btn-game github-link"
+              >
+                View on GitHub
+              </a>
+            </div>
+          </div>
+        )}
 
         {gameDetails.rules && (
           <div className="game-rules-section">
@@ -205,26 +260,28 @@ function GameDetails() {
           </div>
         )}
 
-        <div className="game-files-section">
-          <h3 className="game-subtitle">Game Materials</h3>
-          <div className="game-files-grid">
-            {gameDetails.files.map((file, index) => (
-              <div 
-                key={index} 
-                className={`game-file-card ${selectedFile === file.path ? 'active' : ''}`}
-                onClick={() => setSelectedFile(file.path)}
-              >
-                <div className="file-icon">
-                  {file.path.toLowerCase().endsWith('.pdf') ? 'PDF' : 'IMG'}
+        {gameDetails.files && (
+          <div className="game-files-section">
+            <h3 className="game-subtitle">Game Materials</h3>
+            <div className="game-files-grid">
+              {gameDetails.files.map((file, index) => (
+                <div 
+                  key={index} 
+                  className={`game-file-card ${selectedFile === file.path ? 'active' : ''}`}
+                  onClick={() => setSelectedFile(file.path)}
+                >
+                  <div className="file-icon">
+                    {file.path.toLowerCase().endsWith('.pdf') ? 'PDF' : 'IMG'}
+                  </div>
+                  <div className="file-info">
+                    <h4 className="file-name">{file.name}</h4>
+                    <p className="file-description">{file.description}</p>
+                  </div>
                 </div>
-                <div className="file-info">
-                  <h4 className="file-name">{file.name}</h4>
-                  <p className="file-description">{file.description}</p>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
+        )}
 
         {selectedFile && gameDetails.rules && selectedFile !== gameDetails.rules.path && (
           <div className="game-preview-section">

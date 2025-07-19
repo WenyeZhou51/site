@@ -88,6 +88,52 @@
   max-width: 800px;
 }
 
+.game-video-section {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.game-video-container {
+  width: 100%;
+  height: 450px;
+  border: 3px solid #222;
+  overflow: hidden;
+  margin-top: 1.5rem;
+}
+
+.game-video {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.game-github-section {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.github-link-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.github-link {
+  background-color: #333;
+  color: white;
+  border-color: #333;
+  font-weight: bold;
+  padding: 0.8rem 2rem;
+}
+
+.github-link:hover {
+  background-color: #000;
+  border-color: #000;
+  color: white;
+}
+
 .game-cover-image {
   width: 100%;
   height: 100%;
@@ -290,6 +336,10 @@
   .pdf-preview-container {
     height: 500px;
   }
+  
+  .game-video-container {
+    height: 350px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -308,6 +358,10 @@
   
   .pdf-preview-container {
     height: 400px;
+  }
+  
+  .game-video-container {
+    height: 250px;
   }
 }
 

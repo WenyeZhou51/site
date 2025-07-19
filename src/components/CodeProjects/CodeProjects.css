@@ -88,6 +88,33 @@
   transform: scale(1.05);
 }
 
+.project-video-container {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  border: 2px solid #222;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.project-video {
+  width: 100%;
+  height: 100%;
+  border: none;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-video {
+  transform: scale(1.02);
+}
+
+.game-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
 .project-title {
   font-family: 'Indie Flower', 'Comic Neue', 'Helvetica', sans-serif;
   font-size: 1.6rem;
@@ -189,6 +216,10 @@
   .project-title {
     font-size: 1.4rem;
   }
+  
+  .project-video-container {
+    height: 180px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -206,5 +237,9 @@
   
   .project-card {
     padding: 1rem;
+  }
+  
+  .project-video-container {
+    height: 160px;
   }
 } 

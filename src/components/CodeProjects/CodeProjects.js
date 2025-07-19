@@ -1,87 +1,64 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './CodeProjects.css';
 
 const CodeProjects = () => {
-  // Sample projects - you can replace these with your actual projects
-  const projects = [
+  // Videogames collection
+  const videogames = [
     {
-      id: 'project1',
-      title: 'Interactive Web Game',
-      description: 'A browser-based game developed using JavaScript and Canvas API. Features include real-time gameplay, score tracking, and responsive design.',
-      technologies: ['JavaScript', 'HTML5 Canvas', 'CSS3'],
-      imageUrl: '/Asset/CodeProjects/placeholder1.png',
-      githubUrl: 'https://github.com/username/project1',
-      demoUrl: 'https://demo-url.com/project1'
+      id: 'CAPACITOR',
+      name: 'CAPACITOR',
+      description: 'A collaborative multiplayer horror game where players scavenge an abandoned industrial complex for parts as the electricity depletes...',
+      videoUrl: 'https://www.youtube.com/embed/OBx0AlWrRVo?start=4',
+      githubUrl: 'https://github.com/WenyeZhou51/CAPACITOR',
+      thumbnailPath: process.env.PUBLIC_URL + '/Asset/CodeProjects/Capacitor/placeholder.png'
     },
     {
-      id: 'project2',
-      title: 'Personal Finance Tracker',
-      description: 'A React application that helps users track their income, expenses, and savings goals. Includes data visualization and export features.',
-      technologies: ['React', 'Node.js', 'Chart.js'],
-      imageUrl: '/Asset/CodeProjects/placeholder2.png',
-      githubUrl: 'https://github.com/username/project2',
-      demoUrl: 'https://demo-url.com/project2'
-    },
-    {
-      id: 'project3',
-      title: 'Weather Dashboard',
-      description: 'A dashboard that displays current weather and forecasts for user-selected locations. Integrates with a weather API and includes geolocation features.',
-      technologies: ['JavaScript', 'API Integration', 'Bootstrap'],
-      imageUrl: '/Asset/CodeProjects/placeholder3.png',
-      githubUrl: 'https://github.com/username/project3',
-      demoUrl: 'https://demo-url.com/project3'
+      id: 'THE-HOLLOWS',
+      name: 'THE HOLLOWS',
+      description: 'A 2D JRPG where the main character and their party ventures into the hollows to save the world and fall the obelisk',
+      videoUrl: 'https://www.youtube.com/embed/w4s7HLy6IOY',
+      githubUrl: 'https://github.com/WenyeZhou51/The-Hollows',
+      thumbnailPath: process.env.PUBLIC_URL + '/Asset/CodeProjects/The Hollows/placeholder.png'
     }
   ];
 
   return (
     <div className="code-projects-container">
-      <h2 className="about-title">Fun Code Projects</h2>
+      <h2 className="about-title">Videogames</h2>
       <div className="projects-intro">
-        <p>Explore a collection of my coding projects. These range from web applications to games and tools, showcasing different programming languages and technologies.</p>
+        <p>Explore a collection of my videogame projects. These range from multiplayer horror experiences to classic JRPG adventures, showcasing different game development technologies and design approaches.</p>
       </div>
       
       <div className="projects-grid">
-        {projects.map((project) => (
-          <div className="project-card" key={project.id}>
-            <div className="project-image-container">
-              <img 
-                src={project.imageUrl} 
-                alt={`${project.title} screenshot`} 
-                className="project-image"
-                onError={(e) => {
-                  e.target.onerror = null;
-                  e.target.src = '/Asset/CodeProjects/default-placeholder.png';
-                }}
-              />
-            </div>
-            <h3 className="project-title">{project.title}</h3>
-            <p className="project-description">{project.description}</p>
-            <div className="project-technologies">
-              {project.technologies.map((tech, index) => (
-                <span key={index} className="tech-tag">{tech}</span>
-              ))}
-            </div>
+        {videogames.map((game) => (
+          <div className="project-card" key={game.id}>
+            <Link to={`/games/${game.id}`} className="game-link">
+              <div className="project-video-container">
+                <iframe
+                  src={game.videoUrl}
+                  title={`${game.name} preview`}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="project-video"
+                ></iframe>
+              </div>
+            </Link>
+            <h3 className="project-title">{game.name}</h3>
+            <p className="project-description">{game.description}</p>
             <div className="project-links">
-              {project.githubUrl && (
-                <a 
-                  href={project.githubUrl} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="project-link"
-                >
-                  View Code
-                </a>
-              )}
-              {project.demoUrl && (
-                <a 
-                  href={project.demoUrl} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="project-link"
-                >
-                  Live Demo
-                </a>
-              )}
+              <Link to={`/games/${game.id}`} className="project-link">
+                View Details
+              </Link>
+              <a 
+                href={game.githubUrl} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="project-link"
+              >
+                View Code
+              </a>
             </div>
           </div>
         ))}

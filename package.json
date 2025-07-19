@@ -1,6 +1,6 @@
 {
-  "homepage": "https://wenyezhou.github.io",
-  "name": "portfolio",
+  "homepage": "https://wenyezhou.github.io/site",
+  "name": "personal website",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

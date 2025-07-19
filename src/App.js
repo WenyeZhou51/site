@@ -14,7 +14,7 @@ import './components/Games/GlobalOverrides.css';
 function App() {
   return (
     <div className="paper container">
-      <Router>
+      <Router basename="/site">
         <Navbar />
         <div className="content-container">
           <Routes>
