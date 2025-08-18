@@ -314,6 +314,85 @@
   transform: translateY(-2px);
 }
 
+/* Concept Art Section */
+.concept-art-section {
+  width: 100%;
+  max-width: 1000px;
+  margin: 3rem auto 0;
+  padding-top: 2rem;
+  border-top: 2px solid #222;
+}
+
+.concept-art-gallery {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.concept-art-main-image {
+  margin-bottom: 2rem;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.concept-art-featured-image {
+  max-width: 100%;
+  max-height: 600px;
+  object-fit: contain;
+  border: 2px solid #222;
+  border-radius: 4px;
+}
+
+.concept-art-caption {
+  margin-top: 1rem;
+  font-family: 'Patrick Hand', 'Comic Neue', sans-serif;
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.concept-art-thumbnails {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+  width: 100%;
+  max-width: 800px;
+}
+
+.concept-art-thumbnail {
+  width: 120px;
+  height: 120px;
+  border: 2px solid #222;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.concept-art-thumbnail:hover {
+  transform: translateY(-3px);
+  border-color: #000;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+
+.concept-art-thumbnail.active {
+  border-color: #000;
+  box-shadow: 0 0 0 2px rgba(0,0,0,0.2);
+  transform: translateY(-2px);
+}
+
+.concept-art-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .about-title {
@@ -340,6 +419,19 @@
   .game-video-container {
     height: 350px;
   }
+  
+  .concept-art-featured-image {
+    max-height: 400px;
+  }
+  
+  .concept-art-thumbnail {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .concept-art-thumbnails {
+    gap: 0.8rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -362,6 +454,23 @@
   
   .game-video-container {
     height: 250px;
+  }
+  
+  .concept-art-featured-image {
+    max-height: 300px;
+  }
+  
+  .concept-art-thumbnail {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .concept-art-thumbnails {
+    gap: 0.6rem;
+  }
+  
+  .concept-art-caption {
+    font-size: 1rem;
   }
 }
 
@@ -410,4 +519,128 @@
   display: block;
   margin: 0 auto;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Design Notes Section */
+.game-design-notes-section {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.design-notes-content {
+  margin-top: 1.5rem;
+}
+
+.design-notes-intro {
+  font-family: 'Patrick Hand', 'Comic Neue', 'Helvetica', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-left: 4px solid #000;
+  border-radius: 0 4px 4px 0;
+}
+
+.design-subsection {
+  margin-bottom: 2.5rem;
+  padding: 1.5rem;
+  border: 2px solid #222;
+  border-radius: 4px;
+  background-color: #fff;
+  transition: all 0.2s ease;
+}
+
+.design-subsection:hover {
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  transform: translateY(-1px);
+}
+
+.design-subsection-title {
+  font-family: 'Indie Flower', 'Comic Neue', 'Helvetica', sans-serif;
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #000;
+  display: inline-block;
+}
+
+.design-subsection-content {
+  font-family: 'Patrick Hand', 'Comic Neue', 'Helvetica', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.design-subsection-content p {
+  margin-bottom: 1rem;
+}
+
+.design-subsection-content p:last-child {
+  margin-bottom: 0;
+}
+
+.design-items-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1rem;
+}
+
+.design-items-list li {
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.design-items-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #000;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* Responsive adjustments for design notes */
+@media (max-width: 768px) {
+  .design-notes-intro {
+    font-size: 1.1rem;
+    padding: 1.2rem;
+  }
+  
+  .design-subsection {
+    padding: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .design-subsection-title {
+    font-size: 1.3rem;
+  }
+  
+  .design-subsection-content {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .design-notes-intro {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+  
+  .design-subsection {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .design-subsection-title {
+    font-size: 1.2rem;
+  }
+  
+  .design-subsection-content {
+    font-size: 0.95rem;
+  }
 } 

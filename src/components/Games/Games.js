@@ -30,7 +30,8 @@ const Games = () => {
     <div className="games-container">
       <h2 className="about-title">Boardgames</h2>
       <div className="games-intro">
-        <p>A collection of videogames and tabletop games I have created</p>
+        <p>Boardgames I have created, including Life-Action-Role-Playing games and classic tabletop games like deck-builders.</p>
+        <p>Click on a boardgame to see it's rules, materials, setup, and my commentary and reflection on the design process and final result.</p>
       </div>
       
       <div className="games-grid">

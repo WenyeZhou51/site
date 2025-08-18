@@ -7,6 +7,7 @@ function GameDetails() {
   const [gameDetails, setGameDetails] = useState(null);
   const [selectedFile, setSelectedFile] = useState(null);
   const [isImageFile, setIsImageFile] = useState(false);
+  const [selectedConceptArt, setSelectedConceptArt] = useState(0);
 
   useEffect(() => {
     // For demonstration, we're hard-coding the game details
@@ -121,7 +122,119 @@ function GameDetails() {
         longDescription: 'A 2D JRPG where the main character and their party ventures into the hollows to save the world and fall the obelisk. This classic-style role-playing game features turn-based combat, character progression, and an immersive story-driven experience.',
         videoUrl: 'https://www.youtube.com/embed/w4s7HLy6IOY',
         githubUrl: 'https://github.com/WenyeZhou51/The-Hollows',
-        thumbnailPath: process.env.PUBLIC_URL + '/Asset/CodeProjects/The Hollows/placeholder.png'
+        thumbnailPath: process.env.PUBLIC_URL + '/Asset/CodeProjects/The Hollows/placeholder.png',
+        conceptArt: [
+          {
+            name: 'Character Design Fighter.png',
+            path: process.env.PUBLIC_URL + '/Asset/CodeProjects/The Hollows/Concept Art/Character Design Fighter.png',
+            title: 'Character Design Fighter'
+          },
+          {
+            name: 'Character Design Magician.png',
+            path: process.env.PUBLIC_URL + '/Asset/CodeProjects/The Hollows/Concept Art/Character Design Magician.png',
+            title: 'Character Design Magician'
+          },
+          {
+            name: 'Character Design Bard.png',
+            path: process.env.PUBLIC_URL + '/Asset/CodeProjects/The Hollows/Concept Art/Character Design Bard.png',
+            title: 'Character Design Bard'
+          },
+          {
+            name: 'Character Design Ranger.png',
+            path: process.env.PUBLIC_URL + '/Asset/CodeProjects/The Hollows/Concept Art/Character Design Ranger.png',
+            title: 'Character Design Ranger'
+          },
+          {
+            name: 'Character Portrait Fighter.png',
+            path: process.env.PUBLIC_URL + '/Asset/CodeProjects/The Hollows/Concept Art/Character Portrait Fighter.png',
+            title: 'Character Portrait Fighter'
+          },
+          {
+            name: 'NPC hood overworld.png',
+            path: process.env.PUBLIC_URL + '/Asset/CodeProjects/The Hollows/Concept Art/NPC hood overworld.png',
+            title: 'NPC hood overworld'
+          },
+          {
+            name: 'Monster Design Obelisk.png',
+            path: process.env.PUBLIC_URL + '/Asset/CodeProjects/The Hollows/Concept Art/Monster Design Obelisk.png',
+            title: 'Monster Design Obelisk'
+          },
+          {
+            name: 'Monster Design Aperture.png',
+            path: process.env.PUBLIC_URL + '/Asset/CodeProjects/The Hollows/Concept Art/Monster Design Aperture.png',
+            title: 'Monster Design Aperture'
+          },
+          {
+            name: 'Monster Design Morphed Weaver.png',
+            path: process.env.PUBLIC_URL + '/Asset/CodeProjects/The Hollows/Concept Art/Monster Design Morphed Weaver.png',
+            title: 'Monster Design Morphed Weaver'
+          },
+          {
+            name: 'Monster Design Morphed Aperture.png',
+            path: process.env.PUBLIC_URL + '/Asset/CodeProjects/The Hollows/Concept Art/Monster Design Morphed Aperture.png',
+            title: 'Monster Design Morphed Aperture'
+          },
+          {
+            name: 'Monster Design Weaver.png',
+            path: process.env.PUBLIC_URL + '/Asset/CodeProjects/The Hollows/Concept Art/Monster Design Weaver.png',
+            title: 'Monster Design Weaver'
+          },
+          {
+            name: 'Overworld Gate.png',
+            path: process.env.PUBLIC_URL + '/Asset/CodeProjects/The Hollows/Concept Art/Overworld Gate.png',
+            title: 'Overworld Gate'
+          },
+          {
+            name: 'Overworld cave.png',
+            path: process.env.PUBLIC_URL + '/Asset/CodeProjects/The Hollows/Concept Art/Overworld cave.png',
+            title: 'Overworld cave'
+          },
+          {
+            name: 'Overworld corridor.png',
+            path: process.env.PUBLIC_URL + '/Asset/CodeProjects/The Hollows/Concept Art/Overworld corridor.png',
+            title: 'Overworld corridor'
+          },
+          {
+            name: 'Overworld Entrance.png',
+            path: process.env.PUBLIC_URL + '/Asset/CodeProjects/The Hollows/Concept Art/Overworld Entrance.png',
+            title: 'Overworld Entrance'
+          },
+          {
+            name: 'Comic panel.png',
+            path: process.env.PUBLIC_URL + '/Asset/CodeProjects/The Hollows/Concept Art/Comic panel.png',
+            title: 'Comic panel'
+          },
+          {
+            name: 'Comic panel 2.png',
+            path: process.env.PUBLIC_URL + '/Asset/CodeProjects/The Hollows/Concept Art/Comic panel 2.png',
+            title: 'Comic panel 2'
+          },
+          {
+            name: 'Comic panel 3.png',
+            path: process.env.PUBLIC_URL + '/Asset/CodeProjects/The Hollows/Concept Art/Comic panel 3.png',
+            title: 'Comic panel 3'
+          },
+          {
+            name: 'Start Menu.png',
+            path: process.env.PUBLIC_URL + '/Asset/CodeProjects/The Hollows/Concept Art/Start Menu.png',
+            title: 'Start Menu'
+          },
+          {
+            name: 'Surprise second phase.png',
+            path: process.env.PUBLIC_URL + '/Asset/CodeProjects/The Hollows/Concept Art/Surprise second phase.png',
+            title: 'Surprise second phase'
+          },
+          {
+            name: 'Cake with a candle on it.png',
+            path: process.env.PUBLIC_URL + '/Asset/CodeProjects/The Hollows/Concept Art/Cake with a candle on it.png',
+            title: 'Cake with a candle on it'
+          },
+          {
+            name: 'NPC hood.png',
+            path: process.env.PUBLIC_URL + '/Asset/CodeProjects/The Hollows/Concept Art/NPC hood.png',
+            title: 'NPC hood'
+          }
+        ]
       });
       setSelectedFile(null); // Videogames don't need file selection
     }
@@ -204,6 +317,62 @@ function GameDetails() {
           <h3 className="game-subtitle">About the Game</h3>
           <p className="game-long-description">{gameDetails.longDescription}</p>
         </div>
+
+        {gameDetails.id === 'CAPACITOR' && (
+          <div className="game-design-notes-section">
+            <h3 className="game-subtitle">Design Notes</h3>
+            <div className="design-notes-content">
+              <p className="design-notes-intro">
+                The game is a collaborative first-person horror game for 2-5 players, where players gather scrap in a strange industrial facility. 
+                The main gameplay involves exploring the industrial complex to collect components while avoiding traps and monsters as the electricity drains around them.
+              </p>
+              
+              <div className="design-subsection">
+                <h4 className="design-subsection-title">Economy</h4>
+                <div className="design-subsection-content">
+                  <p><strong>Inventory Slots:</strong> Players have 4 slots to carry equipment or loot. This is to encourage players to share equipment (eg: 1 flashlight per 2 person) and give interesting choices regarding what equipment to bring or leave behind.</p>
+                  
+                  <p>Scrap has different values, with more valuable scraps carrying special negative effects. The expensive strange radio constantly makes noise attracting enemies, and the valuable dormant bomb explodes after a certain time! This adds choice to player decisions about what to carry back and what to leave rather than mindlessly picking up everything.</p>
+                  
+                  <p>Scrap is scattered across the level and players must bring them back to spawn to cash them in. This pushes players to explore deeper and deeper into the facility as the nearby scrap gets scavenged.</p>
+                </div>
+              </div>
+
+              <div className="design-subsection">
+                <h4 className="design-subsection-title">Electricity System</h4>
+                <div className="design-subsection-content">
+                  <p><strong>Generator:</strong> Powers the facility but constantly overheats and fogs up the facility, decreasing visibility, forcing players to regularly scavenge for coolant to quell it. This serves as time pressure as well as a way to split up players since usually one player will go alone to refuel as other players loot. Splitting up the players improves horror experience and increases danger.</p>
+                </div>
+              </div>
+
+              <div className="design-subsection">
+                <h4 className="design-subsection-title">Level Generation</h4>
+                <div className="design-subsection-content">
+                  <p>The level is randomly generated on a 10 x 10 x 10 voxel grid with each room and corridor being a different size in voxels. The level changes each time the player starts a day so players can't just memorize the level. This adds to the unpredictability of the game and is central to the horror element.</p>
+                </div>
+              </div>
+
+              <div className="design-subsection">
+                <h4 className="design-subsection-title">Items</h4>
+                <div className="design-subsection-content">
+                  <ul className="design-items-list">
+                    <li><strong>Flashlight:</strong> lights up where the player points it to</li>
+                    <li><strong>Spraypaint:</strong> paints the surface, acting as a waypoint marker</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="design-subsection">
+                <h4 className="design-subsection-title">The Terminal</h4>
+                <div className="design-subsection-content">
+                  <p>Acts like an actual command line terminal. Commands have to be inputted as if it is an actual cmd. Players can purchase items, read entity index, and see a radar view around other players depending on their command.</p>
+                  
+                  <p>The existence of the terminal is to foster player communication. The terminal guide can help other players avoid monsters or direct them to the nearest scrap. This makes the collaborative element more interesting.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
 
         {gameDetails.githubUrl && (
           <div className="game-github-section">
@@ -344,6 +513,37 @@ function GameDetails() {
                 </object>
               </div>
             )}
+          </div>
+        )}
+
+        {gameDetails.conceptArt && (
+          <div className="concept-art-section">
+            <h3 className="game-subtitle">Concept Art</h3>
+            <div className="concept-art-gallery">
+              <div className="concept-art-main-image">
+                <img 
+                  src={gameDetails.conceptArt[selectedConceptArt].path} 
+                  alt={gameDetails.conceptArt[selectedConceptArt].title}
+                  className="concept-art-featured-image" 
+                />
+                <div className="concept-art-caption">{gameDetails.conceptArt[selectedConceptArt].title}</div>
+              </div>
+              
+              <div className="concept-art-thumbnails">
+                {gameDetails.conceptArt.map((art, index) => (
+                  <div 
+                    key={index} 
+                    className={`concept-art-thumbnail ${index === selectedConceptArt ? 'active' : ''}`}
+                    onClick={() => setSelectedConceptArt(index)}
+                  >
+                    <img 
+                      src={art.path} 
+                      alt={art.title}
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         )}
       </div>

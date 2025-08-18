@@ -27,7 +27,7 @@ const CodeProjects = () => {
     <div className="code-projects-container">
       <h2 className="about-title">Videogames</h2>
       <div className="projects-intro">
-        <p>Explore a collection of my videogame projects. These range from multiplayer horror experiences to classic JRPG adventures, showcasing different game development technologies and design approaches.</p>
+        <p>Videogames or game mechanics I have created either alone or with friends. Click on a boardgame to see it's gameplay, github link, as well as concept art, design documents, or commentaries on design decisions I've made</p>
       </div>
       
       <div className="projects-grid">

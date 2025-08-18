@@ -7,7 +7,11 @@ function DevJournal() {
       <div className="about-content">
         <h2 className="about-title">RPG Campaigns</h2>
         <p className="campaign-intro">
-          A series of custom Role Playing Game campaigns I have written
+          A series of custom Role Playing Game campaigns I have written. I have been a DM for more than 10 years and love to write my one custom campaigns and scenarios. 
+          Currently working on my Blue, Red, White Call of Cthulhu scenario trilogy. I will also upload Dungeons and Dragons campaigns once I polish them up.
+        </p>
+        <p className="campaign-intro">
+          Click on a boardgame to see the DM's handbook.
         </p>
         
         <div className="campaigns-list">
