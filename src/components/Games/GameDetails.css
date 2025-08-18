@@ -643,4 +643,13 @@
   .design-subsection-content {
     font-size: 0.95rem;
   }
+}
+
+/* Developer Commentary Section */
+.developer-commentary-section {
+  width: 100%;
+  max-width: 800px;
+  margin: 3rem auto 0;
+  padding-top: 2rem;
+  border-top: 2px solid #222;
 } 

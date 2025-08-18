@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import './GameDetails.css';
+import SpoilerReveal from '../SpoilerReveal/SpoilerReveal';
 
 function GameDetails() {
   const { gameId } = useParams();
@@ -374,6 +375,26 @@ function GameDetails() {
           </div>
         )}
 
+        {gameDetails.id === 'CAPACITOR' && (
+          <div className="developer-commentary-section">
+            <h3 className="game-subtitle">Developer's Commentary</h3>
+            <SpoilerReveal>
+              <p>
+                I've always been interested in creating collaborative multiplayer games. As an international student, my friends are scattered across countries, and my way of connecting and socializing with them mostly comes in the form of these games.
+              </p>
+              <p>
+                CAPACITOR is made in the style of Lethal Company. Lethal Company is a game me and my friends loved and played extensively since its release.
+              </p>
+              <p>
+                However, as great as Lethal Company is, it has its design tradeoffs. For one, the optimal strategy of play at the highest level is a very individualistic experience. People split up for highest coverage and no terminal operator is used. This results in people looting alone most of the time for maximum profit. Also, the flashlight is almost useless due to the basekit scan feature providing illumination, removing the tradeoff of visibility vs profit.
+              </p>
+              <p>
+                I tried to address these issues in my game CAPACITOR. I wanted the optimal strategy to be one person being the terminal operator, helping three people navigate the facility. I made the terminal cam pretty powerful in providing direction and navigation. Also, making the flashlight necessary for seeing now encourages people sticking together to reduce the amount of flashlight needed. Although less dynamic in play, I think this genre of collaborative horror game is the most fun when players are near each other and communicating constantly.
+              </p>
+            </SpoilerReveal>
+          </div>
+        )}
+
         {gameDetails.githubUrl && (
           <div className="game-github-section">
             <h3 className="game-subtitle">Source Code</h3>
@@ -544,6 +565,38 @@ function GameDetails() {
                 ))}
               </div>
             </div>
+          </div>
+        )}
+
+        {gameDetails.id === 'THE-HOLLOWS' && (
+          <div className="developer-commentary-section">
+            <h3 className="game-subtitle">Developer's Commentary</h3>
+            <SpoilerReveal>
+              <p>
+                The catch of this game is that it is "unbeatable" in the traditional sense. This is a game about obsession.
+              </p>
+              <p>
+                The game is set as a classic save-the-world JRPG, where the protagonist tries to defeat "The obelisk" with their friends to reverse calamity.
+              </p>
+              <p>
+                However, the player soon finds the dungeon hostile and uncaring. To unlock the first door, they are required to play a card game where they do not know the rules of. This is the disorienting and uncaring world under the dungeon. The combat is also difficult and heavily RNG. Monsters are easy but can cast "Metamorphosis" at any time, transforming into extremely lethal and eldritch versions of themselves. Players will instinctively fear the Metamorphosis skill, mirroring the protagonist's fear of change.
+              </p>
+              <p>
+                After gathering all the keys and fighting to the final boss, the player finds it difficult but beatable. Upon defeating it, the player is given false hope before a surprise, invincible second phase starts.
+              </p>
+              <p>
+                Each time the player dies, they loop back to the beginning of the day. They retain their memories, and their dialogue changes with each death they accumulate. The deteriorating mental state of the protagonist can be seen with each additional death.
+              </p>
+              <p>
+                The player can leave the dungeon at any point through the dungeon exit, and give up their fight with the obelisk. This is the only way to conclude the game.
+              </p>
+              <p>
+                The game is about the obsession of the protagonist towards the obelisk, and the player's obsession with "Winning" a videogame. As the protagonist suffers death after death, loop after loop, the player too listens to repeating dialogue and dies to uncontrollable RNG. Both see what was wondrous become repetitive, what was fun become sour, yet both continue...
+              </p>
+              <p>
+                I see the Obelisk as a cosmic uncontrollable force, like time, death, nature, or the stars in the sky. The protagonist and player accept it after their numerous struggles, and walk out of the dungeon into a colorful world in the Epilogue. I think despite everything, the game has a hopeful tone in the end.
+              </p>
+            </SpoilerReveal>
           </div>
         )}
       </div>
