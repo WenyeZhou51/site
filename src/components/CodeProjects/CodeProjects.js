@@ -8,7 +8,7 @@ const CodeProjects = () => {
     {
       id: 'CAPACITOR',
       name: 'CAPACITOR',
-      description: 'A collaborative multiplayer horror game where players scavenge an abandoned industrial complex for parts as the electricity depletes...',
+      description: 'A collaborative multiplayer horror game where players scavenge an abandoned industrial complex for parts as the electricity depletes. The game creates a tense atmosphere as players must work together while the power slowly fades, creating an increasingly dangerous environment.',
       videoUrl: 'https://www.youtube.com/embed/OBx0AlWrRVo?start=4',
       githubUrl: 'https://github.com/WenyeZhou51/CAPACITOR',
       thumbnailPath: process.env.PUBLIC_URL + '/Asset/CodeProjects/Capacitor/placeholder.png'

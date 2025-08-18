@@ -109,10 +109,22 @@ function GameDetails() {
         id: 'CAPACITOR',
         name: 'CAPACITOR',
         description: 'A collaborative multiplayer horror game where players scavenge an abandoned industrial complex for parts as the electricity depletes...',
-        longDescription: 'A collaborative multiplayer horror game where players scavenge an abandoned industrial complex for parts as the electricity depletes. The game creates a tense atmosphere as players must work together while the power slowly fades, creating an increasingly dangerous environment.',
+        longDescription: 'A collaborative multiplayer horror game where players scavenge an abandoned industrial complex for parts as the electricity depletes. The game creates a tense atmosphere as players must work together while the power slowly fades, creating an increasingly dangerous environment.\n\nI created this game with Austin Huang, Sungwon Chung, Junho Kim, and Caleb Mckinney. They are incredible programmers that helped the project immensely. Look out for their future works as well!',
         videoUrl: 'https://www.youtube.com/embed/OBx0AlWrRVo?start=4',
         githubUrl: 'https://github.com/WenyeZhou51/CAPACITOR',
-        thumbnailPath: process.env.PUBLIC_URL + '/Asset/CodeProjects/Capacitor/placeholder.png'
+        thumbnailPath: process.env.PUBLIC_URL + '/Asset/CodeProjects/Capacitor/placeholder.png',
+        conceptArt: [
+          {
+            name: 'Earworm design.png',
+            path: process.env.PUBLIC_URL + '/Asset/CodeProjects/Capacitor/Concept Art/Earworm design.png',
+            title: 'Earworm Design'
+          },
+          {
+            name: 'Venus design.png',
+            path: process.env.PUBLIC_URL + '/Asset/CodeProjects/Capacitor/Concept Art/Venus design.png',
+            title: 'Venus Design'
+          }
+        ]
       });
       setSelectedFile(null); // Videogames don't need file selection
     } else if (gameId === 'THE-HOLLOWS') {
@@ -375,6 +387,37 @@ function GameDetails() {
           </div>
         )}
 
+        {gameDetails.id === 'CAPACITOR' && gameDetails.conceptArt && (
+          <div className="concept-art-section">
+            <h3 className="game-subtitle">Concept Art</h3>
+            <div className="concept-art-gallery">
+              <div className="concept-art-main-image">
+                <img 
+                  src={gameDetails.conceptArt[selectedConceptArt].path} 
+                  alt={gameDetails.conceptArt[selectedConceptArt].title}
+                  className="concept-art-featured-image"
+                />
+                <div className="concept-art-caption">{gameDetails.conceptArt[selectedConceptArt].title}</div>
+              </div>
+              
+              <div className="concept-art-thumbnails">
+                {gameDetails.conceptArt.map((art, index) => (
+                  <div 
+                    key={index} 
+                    className={`concept-art-thumbnail ${index === selectedConceptArt ? 'active' : ''}`}
+                    onClick={() => setSelectedConceptArt(index)}
+                  >
+                    <img 
+                      src={art.path} 
+                      alt={art.title}
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
         {gameDetails.id === 'CAPACITOR' && (
           <div className="developer-commentary-section">
             <h3 className="game-subtitle">Developer's Commentary</h3>
@@ -537,36 +580,6 @@ function GameDetails() {
           </div>
         )}
 
-        {gameDetails.conceptArt && (
-          <div className="concept-art-section">
-            <h3 className="game-subtitle">Concept Art</h3>
-            <div className="concept-art-gallery">
-              <div className="concept-art-main-image">
-                <img 
-                  src={gameDetails.conceptArt[selectedConceptArt].path} 
-                  alt={gameDetails.conceptArt[selectedConceptArt].title}
-                  className="concept-art-featured-image" 
-                />
-                <div className="concept-art-caption">{gameDetails.conceptArt[selectedConceptArt].title}</div>
-              </div>
-              
-              <div className="concept-art-thumbnails">
-                {gameDetails.conceptArt.map((art, index) => (
-                  <div 
-                    key={index} 
-                    className={`concept-art-thumbnail ${index === selectedConceptArt ? 'active' : ''}`}
-                    onClick={() => setSelectedConceptArt(index)}
-                  >
-                    <img 
-                      src={art.path} 
-                      alt={art.title}
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        )}
 
         {gameDetails.id === 'THE-HOLLOWS' && (
           <div className="developer-commentary-section">
