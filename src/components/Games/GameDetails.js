@@ -580,6 +580,62 @@ function GameDetails() {
           </div>
         )}
 
+        {gameDetails.id === 'Arcana' && (
+          <div className="developer-commentary-section">
+            <h3 className="game-subtitle">Developer's Commentary</h3>
+            <SpoilerReveal>
+              <p>
+                I stopped development of this deck building game in Summer 2024 after realizing some of its fundamental flaws.
+              </p>
+              <p>
+                Through balancing changes and numerous testplaying, I have already solved issues like the dominant strategy being to buy attacks only by increasing the general cost of attack cards. I also solved the problem of decks feeling sluggish to play by adding more draw cards.
+              </p>
+              <p>
+                However, I have realized that there are several critical issues that this format of deckbuilder faces and makes it unfun to play.
+              </p>
+              <p>
+                One is that the player's actions are largely independent. As the game goes on, a turn can be very long due to the amount of draws and combos. A player mindlessly waits around during the other players' turns, with no interaction or understanding of their decks required. (contrast this with Magic the Gathering, where understanding of the opponent's deck is critical and interaction is possible via instants)
+              </p>
+              <p>
+                Another is the kingmaker effect: The game is very snowbally, and players that fall behind can almost never catch up. However, they can still influence the outcome of the game greatly by choosing who to attack, meaning the final victor of the game is often decided by players that have no winning chance.
+              </p>
+              <p>
+                These major problems also exist in the games this deckbuilder is based on: Reign and Ascension. Perhaps this is why both are not as popular nowadays. I have learned valuable lessons from this failed design experiment.
+              </p>
+            </SpoilerReveal>
+          </div>
+        )}
+
+        {gameDetails.id === 'THE-HOLLOWS' && gameDetails.conceptArt && (
+          <div className="concept-art-section">
+            <h3 className="game-subtitle">Concept Art</h3>
+            <div className="concept-art-gallery">
+              <div className="concept-art-main-image">
+                <img 
+                  src={gameDetails.conceptArt[selectedConceptArt].path} 
+                  alt={gameDetails.conceptArt[selectedConceptArt].title}
+                  className="concept-art-featured-image"
+                />
+                <div className="concept-art-caption">{gameDetails.conceptArt[selectedConceptArt].name.replace('.png', '')}</div>
+              </div>
+              
+              <div className="concept-art-thumbnails">
+                {gameDetails.conceptArt.map((art, index) => (
+                  <div 
+                    key={index} 
+                    className={`concept-art-thumbnail ${index === selectedConceptArt ? 'active' : ''}`}
+                    onClick={() => setSelectedConceptArt(index)}
+                  >
+                    <img 
+                      src={art.path} 
+                      alt={art.title}
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
 
         {gameDetails.id === 'THE-HOLLOWS' && (
           <div className="developer-commentary-section">

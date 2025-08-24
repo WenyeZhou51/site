@@ -16,6 +16,22 @@ function Creations() {
   // Art project data organized by folders
   const artProjects = [
     {
+      id: "city-street",
+      title: "City Street, 2025",
+      description: "",
+      type: "image",
+      imagePath: "/Asset/Random Art/City Street/City Street.png",
+      imageTitle: "City Street"
+    },
+    {
+      id: "frames",
+      title: "Frames, 2025",
+      description: "",
+      type: "image",
+      imagePath: "/Asset/Random Art/Frames/Frames.png",
+      imageTitle: "Frames"
+    },
+    {
       id: "journal-comic",
       title: "Journal Comic, 2024",
       description: "",
@@ -69,6 +85,14 @@ function Creations() {
       type: "image",
       imagePath: "/Asset/Random Art/Posters/Soft.png",
       imageTitle: "Soft Rains"
+    },
+    {
+      id: "sea-storm",
+      title: "Sea Storm, 2025",
+      description: "",
+      type: "image",
+      imagePath: "/Asset/Random Art/Sea Storm/storm.jpg",
+      imageTitle: "Sea Storm"
     }
   ];
 
