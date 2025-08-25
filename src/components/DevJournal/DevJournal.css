@@ -186,3 +186,29 @@
     height: 300px;
   }
 }
+
+/* Developer Commentary Styling */
+.developer-commentary {
+  font-family: 'Patrick Hand', 'Comic Neue', 'Helvetica', sans-serif;
+}
+
+.developer-commentary h4 {
+  font-family: 'Indie Flower', 'Comic Neue', 'Helvetica', sans-serif;
+  font-size: 1.4rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.5rem;
+}
+
+.developer-commentary p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.developer-commentary p:last-child {
+  margin-bottom: 0;
+}

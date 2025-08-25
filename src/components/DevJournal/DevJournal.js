@@ -1,5 +1,6 @@
 import React from 'react';
 import './DevJournal.css';
+import SpoilerReveal from '../SpoilerReveal/SpoilerReveal';
 
 function DevJournal() {
   return (
@@ -51,6 +52,18 @@ function DevJournal() {
                 Download
               </a>
             </div>
+            
+            <SpoilerReveal warningText="WARNING! The developer commentary completely spoils the core of the campaigns. DO NOT read them if you have any intention of playing them in the future.">
+              <div className="developer-commentary">
+                <h4>Developer Commentary - RED</h4>
+                <p>
+                  For RED, the central horror is the structural horror that a society can pose. The central secret is that the town itself is the eldritch monster that the investigators are looking for. It's inhabitants are equivalent to the cells in the monster's body, wearing red and white like blood cells. The people inside the town are replacable, and believe meat and metal has no fundamental different. This is because each person in the town only serves their social function and is a cog in this monsterous town.
+                </p>
+                <p>
+                  This tension of individuals being disposable parts of a social machine is prevalent in real world. I feel like for something to be really horrifying, its core should be fundamental thing that people fear even in real life. The story doesn't have to be connected to that at all. You can throw in as much monster encounters and eerie scenary as you want, but the underlying thread should be there and that's what makes a coc campaign truely work. Without that thread, the campaign is without basis and without soul.
+                </p>
+              </div>
+            </SpoilerReveal>
           </div>
           
           <div className="campaign-card">
@@ -91,6 +104,18 @@ function DevJournal() {
                 Download
               </a>
             </div>
+            
+            <SpoilerReveal warningText="WARNING! The developer commentary completely spoils the core of the campaigns. DO NOT read them if you have any intention of playing them in the future.">
+              <div className="developer-commentary">
+                <h4>Developer Commentary - BLUE</h4>
+                <p>
+                  Call of cthulhu campaigns center around horror and mystery. For my campaign creation process, I usually center on a specific horror as the theme for the campaign, and derive a mystery from it. For Blue, it centers around pascal's phrase that man is a thinking reed. Reed can be used to make papyrus, and then into books, and that is where the idea for the library where people are turned into books comes from.
+                </p>
+                <p>
+                  The campaign also has highly alchemic theming. The seperation of a human into body, mind, and soul, the realisation that books contains the mind, the mirror the soul, and the sea the body is critical to solving the mystery in this campaign. The alchemic theming works well with the centeral secret, since both tries to disect a human and transform it in some way.
+                </p>
+              </div>
+            </SpoilerReveal>
           </div>
         </div>
       </div>

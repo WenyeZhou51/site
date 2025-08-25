@@ -21,8 +21,9 @@ function AboutMe() {
           <h3 className="name-tag">I am Wenye Zhou</h3>
           <p className="bio">
             A game designer from Rice University. I major in Art and Computer Science, and I like to play 
-            videogames, boardgames, and poker in my freetime. I enjoy drawing, writing, coding, and creating 
-            stories. I made this website to display the games, stories, projects, and art I've worked on.
+            videogames, boardgames, and trpg in my freetime. I enjoy drawing, writing, coding, and creating 
+            stories. I made this website to display the games, stories, projects, and art I've worked on. 
+            If you want to collaborate, reach out to me at wz51@rice.edu!
           </p>
         </div>
       </div>
