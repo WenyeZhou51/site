@@ -264,6 +264,39 @@ function GameDetails() {
     }
   }, [selectedFile]);
 
+  // Add protection for 剧本杀 games
+  useEffect(() => {
+    const isProtectedGame = gameDetails && (gameDetails.id === '雪骤山庄' || gameDetails.id === '雾海');
+    
+    if (isProtectedGame) {
+      const handleKeyDown = (e) => {
+        // Prevent Ctrl+S (save), Ctrl+P (print), Ctrl+Shift+I (dev tools), F12 (dev tools)
+        if ((e.ctrlKey && (e.key === 's' || e.key === 'p')) || 
+            (e.ctrlKey && e.shiftKey && e.key === 'I') || 
+            e.key === 'F12') {
+          e.preventDefault();
+          return false;
+        }
+      };
+
+      const handleContextMenu = (e) => {
+        // Only prevent right-click on protected PDFs
+        if (e.target.closest('.protected-pdf')) {
+          e.preventDefault();
+          return false;
+        }
+      };
+
+      document.addEventListener('keydown', handleKeyDown);
+      document.addEventListener('contextmenu', handleContextMenu);
+
+      return () => {
+        document.removeEventListener('keydown', handleKeyDown);
+        document.removeEventListener('contextmenu', handleContextMenu);
+      };
+    }
+  }, [gameDetails]);
+
   if (!gameDetails) {
     return (
       <div className="game-details-container">
@@ -534,13 +567,18 @@ function GameDetails() {
                   type="application/pdf"
                   width="100%"
                   height="600px"
-                  className="pdf-viewer"
+                  className={`pdf-viewer ${(gameDetails.id === '雪骤山庄' || gameDetails.id === '雾海') ? 'protected-pdf' : ''}`}
+                  onContextMenu={(e) => (gameDetails.id === '雪骤山庄' || gameDetails.id === '雾海') && e.preventDefault()}
                 >
                   <p className="pdf-fallback">
                     It appears your browser doesn't support embedded PDFs.
-                    <a href={selectedFile} target="_blank" rel="noopener noreferrer">
-                      Click here to download the PDF
-                    </a>
+                    {(gameDetails.id === '雪骤山庄' || gameDetails.id === '雾海') ? (
+                      <span>Please use a modern browser to view this content.</span>
+                    ) : (
+                      <a href={selectedFile} target="_blank" rel="noopener noreferrer">
+                        Click here to download the PDF
+                      </a>
+                    )}
                   </p>
                 </object>
               </div>
@@ -566,13 +604,18 @@ function GameDetails() {
                   type="application/pdf"
                   width="100%"
                   height="600px"
-                  className="pdf-viewer"
+                  className={`pdf-viewer ${(gameDetails.id === '雪骤山庄' || gameDetails.id === '雾海') ? 'protected-pdf' : ''}`}
+                  onContextMenu={(e) => (gameDetails.id === '雪骤山庄' || gameDetails.id === '雾海') && e.preventDefault()}
                 >
                   <p className="pdf-fallback">
                     It appears your browser doesn't support embedded PDFs.
-                    <a href={selectedFile} target="_blank" rel="noopener noreferrer">
-                      Click here to download the PDF
-                    </a>
+                    {(gameDetails.id === '雪骤山庄' || gameDetails.id === '雾海') ? (
+                      <span>Please use a modern browser to view this content.</span>
+                    ) : (
+                      <a href={selectedFile} target="_blank" rel="noopener noreferrer">
+                        Click here to download the PDF
+                      </a>
+                    )}
                   </p>
                 </object>
               </div>

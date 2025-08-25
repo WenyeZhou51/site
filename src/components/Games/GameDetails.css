@@ -652,4 +652,41 @@
   margin: 3rem auto 0;
   padding-top: 2rem;
   border-top: 2px solid #222;
+}
+
+/* Protected PDF Styles for 剧本杀 games */
+.protected-pdf {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  pointer-events: auto;
+  position: relative;
+}
+
+.protected-pdf::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Disable right-click context menu on protected PDFs */
+.pdf-preview-container:has(.protected-pdf) {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Additional protection for fallback text */
+.pdf-fallback span {
+  font-family: 'Patrick Hand', 'Comic Neue', sans-serif;
+  color: #666;
+  font-style: italic;
 } 
