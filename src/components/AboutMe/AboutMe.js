@@ -23,7 +23,7 @@ function AboutMe() {
             A game designer from Rice University. I major in Art and Computer Science, and I like to play 
             videogames, boardgames, and trpg in my freetime. I enjoy drawing, writing, coding, and creating 
             stories. I made this website to display the games, stories, projects, and art I've worked on. 
-            If you want to collaborate, reach out to me at wz51@rice.edu!
+            If you want to collaborate, reach out to me at wenyezhou51@gmail.com!
           </p>
         </div>
       </div>

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import './GameDetails.css';
 import SpoilerReveal from '../SpoilerReveal/SpoilerReveal';
+import ProtectedPdfViewer from '../ProtectedPdfViewer/ProtectedPdfViewer';
 
 function GameDetails() {
   const { gameId } = useParams();
@@ -108,9 +109,10 @@ function GameDetails() {
       setGameDetails({
         id: 'CAPACITOR',
         name: 'CAPACITOR',
+        type: 'videogame',
         description: 'A collaborative multiplayer horror game where players scavenge an abandoned industrial complex for parts as the electricity depletes...',
         longDescription: 'A collaborative multiplayer horror game where players scavenge an abandoned industrial complex for parts as the electricity depletes. The game creates a tense atmosphere as players must work together while the power slowly fades, creating an increasingly dangerous environment.\n\nI created this game with Austin Huang, Sungwon Chung, Junho Kim, and Caleb Mckinney. They are incredible programmers that helped the project immensely. Look out for their future works as well!',
-        videoUrl: 'https://www.youtube.com/embed/OBx0AlWrRVo?start=4',
+        videoUrl: 'https://www.youtube.com/embed/5jVMpN_Kfqk?start=10',
         githubUrl: 'https://github.com/WenyeZhou51/CAPACITOR',
         thumbnailPath: process.env.PUBLIC_URL + '/Asset/CodeProjects/Capacitor/placeholder.png',
         conceptArt: [
@@ -131,9 +133,10 @@ function GameDetails() {
       setGameDetails({
         id: 'THE-HOLLOWS',
         name: 'THE HOLLOWS',
+        type: 'videogame',
         description: 'A 2D JRPG where the main character and their party ventures into the hollows to save the world and fall the obelisk',
         longDescription: 'A 2D JRPG where the main character and their party ventures into the hollows to save the world and fall the obelisk. This classic-style role-playing game features turn-based combat, character progression, and an immersive story-driven experience.',
-        videoUrl: 'https://www.youtube.com/embed/w4s7HLy6IOY',
+        videoUrl: 'https://www.youtube.com/embed/l5K3YIxcUnM?start=2',
         githubUrl: 'https://github.com/WenyeZhou51/The-Hollows',
         thumbnailPath: process.env.PUBLIC_URL + '/Asset/CodeProjects/The Hollows/placeholder.png',
         conceptArt: [
@@ -250,6 +253,39 @@ function GameDetails() {
         ]
       });
       setSelectedFile(null); // Videogames don't need file selection
+    } else if (gameId === 'MINUTE-MARK') {
+      setGameDetails({
+        id: 'MINUTE-MARK',
+        name: 'MINUTE MARK',
+        type: 'videogame',
+        description: 'Minute Mark is a 2D singleplayer platformer where you run, jump, and slide across hand-drawn levels at incredible speed, racing against a strict timer. Rewind your mistakes and make creative skips to chase the leaderboard. Currently on STEAM!',
+        longDescription: "The game is inspired by platformers like sonic and pizza tower, and aims to be a short demo of a player moving fast through a handdrawn world. The game is made by Wenye Zhou, Jialiang Yang, Sunny Sun, Yifan Xu, and Hanna Zhang as part of a Rice University class. Special thanks for Joe Warren for giving guidance and feedback for the game.",
+        playableLink: 'https://store.steampowered.com/app/4387950/Minute_Mark/',
+        thumbnailPath: process.env.PUBLIC_URL + '/Asset/CodeProjects/Minute Mark/placeholder.png'
+      });
+      setSelectedFile(null); // Videogames don't need file selection
+    } else if (gameId === 'CLEAN-OUT-THE-ROOMS') {
+      setGameDetails({
+        id: 'CLEAN-OUT-THE-ROOMS',
+        name: 'CLEAN OUT THE ROOMS',
+        type: 'videogame',
+        description: 'A horror game about cleaning where the player views the world through an OCR lens.',
+        longDescription: "A game about cleaning where the player can't see their surrounding 3d world, only seeing the OCR boxes and labels of objects around them. As they clean the room, they realize that things aren't exactly what they seem.",
+        videoUrl: 'https://www.youtube.com/embed/oubLHyD90eo?start=6',
+        playableLink: 'https://wenyezhou.itch.io/clean-out-the-rooms'
+      });
+      setSelectedFile(null); // Videogames don't need file selection
+    } else if (gameId === 'SEAPUNK-MOD') {
+      setGameDetails({
+        id: 'SEAPUNK-MOD',
+        name: 'SEAPUNK MOD - SLAY THE SPIRE 2',
+        type: 'videogame',
+        description: 'Play as the Seapunk — a coastal punk who drowns enemies, entwines cards into powerful Blobs, and grows their strength over time. Features unique Drown, Entwine, and Grow mechanics, 60+ cards, 3 relics, and co-op multiplayer cards.',
+        longDescription: 'Play as the Seapunk — a coastal punk who drowns enemies, entwines cards into powerful Blobs, and grows their strength over time. Features unique Drown, Entwine, and Grow mechanics, 60+ cards, 3 relics, and co-op multiplayer cards.',
+        playableLink: 'https://steamcommunity.com/sharedfiles/filedetails/?id=3748204457',
+        thumbnailPath: process.env.PUBLIC_URL + '/Asset/CodeProjects/Seapunk Mod/placeholder.png'
+      });
+      setSelectedFile(null); // Videogames don't need file selection
     }
   }, [gameId]);
 
@@ -313,8 +349,8 @@ function GameDetails() {
   return (
     <div className="game-details-container">
       <div className="game-details-header">
-        <Link to={gameDetails.videoUrl ? "/code-projects" : "/games"} className="back-link">
-          ← Back to {gameDetails.videoUrl ? "Videogames" : "Boardgames"}
+        <Link to={gameDetails.type === 'videogame' ? "/code-projects" : "/games"} className="back-link">
+          ← Back to {gameDetails.type === 'videogame' ? "Videogames" : "Boardgames"}
         </Link>
         <h2 className="about-title" lang="zh-CN">{gameDetails.name}</h2>
       </div>
@@ -334,7 +370,7 @@ function GameDetails() {
               ></iframe>
             </div>
           </div>
-        ) : (
+        ) : gameDetails.thumbnailPath ? (
           <div className="game-main-image">
             {gameDetails.thumbnailPath.endsWith('.pdf') ? (
               <object
@@ -356,6 +392,10 @@ function GameDetails() {
                 className="game-cover-image" 
               />
             )}
+          </div>
+        ) : (
+          <div className="game-main-image game-main-image-placeholder">
+            <span>{gameDetails.name}</span>
           </div>
         )}
 
@@ -471,6 +511,22 @@ function GameDetails() {
           </div>
         )}
 
+        {gameDetails.playableLink && (
+          <div className="game-github-section">
+            <h3 className="game-subtitle">Play the Game</h3>
+            <div className="github-link-container">
+              <a 
+                href={gameDetails.playableLink} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="btn-game play-link"
+              >
+                Play!
+              </a>
+            </div>
+          </div>
+        )}
+
         {gameDetails.githubUrl && (
           <div className="game-github-section">
             <h3 className="game-subtitle">Source Code</h3>
@@ -560,6 +616,8 @@ function GameDetails() {
                   className="full-image-preview"
                 />
               </div>
+            ) : (gameDetails.id === '雪骤山庄' || gameDetails.id === '雾海') ? (
+              <ProtectedPdfViewer pdfPath={selectedFile} maxPages={10} height={600} />
             ) : (
               <div className="pdf-preview-container">
                 <object
@@ -567,18 +625,13 @@ function GameDetails() {
                   type="application/pdf"
                   width="100%"
                   height="600px"
-                  className={`pdf-viewer ${(gameDetails.id === '雪骤山庄' || gameDetails.id === '雾海') ? 'protected-pdf' : ''}`}
-                  onContextMenu={(e) => (gameDetails.id === '雪骤山庄' || gameDetails.id === '雾海') && e.preventDefault()}
+                  className="pdf-viewer"
                 >
                   <p className="pdf-fallback">
                     It appears your browser doesn't support embedded PDFs.
-                    {(gameDetails.id === '雪骤山庄' || gameDetails.id === '雾海') ? (
-                      <span>Please use a modern browser to view this content.</span>
-                    ) : (
-                      <a href={selectedFile} target="_blank" rel="noopener noreferrer">
-                        Click here to download the PDF
-                      </a>
-                    )}
+                    <a href={selectedFile} target="_blank" rel="noopener noreferrer">
+                      Click here to download the PDF
+                    </a>
                   </p>
                 </object>
               </div>
@@ -597,6 +650,8 @@ function GameDetails() {
                   className="full-image-preview"
                 />
               </div>
+            ) : (gameDetails.id === '雪骤山庄' || gameDetails.id === '雾海') ? (
+              <ProtectedPdfViewer pdfPath={selectedFile} maxPages={10} height={600} />
             ) : (
               <div className="pdf-preview-container">
                 <object
@@ -604,18 +659,13 @@ function GameDetails() {
                   type="application/pdf"
                   width="100%"
                   height="600px"
-                  className={`pdf-viewer ${(gameDetails.id === '雪骤山庄' || gameDetails.id === '雾海') ? 'protected-pdf' : ''}`}
-                  onContextMenu={(e) => (gameDetails.id === '雪骤山庄' || gameDetails.id === '雾海') && e.preventDefault()}
+                  className="pdf-viewer"
                 >
                   <p className="pdf-fallback">
                     It appears your browser doesn't support embedded PDFs.
-                    {(gameDetails.id === '雪骤山庄' || gameDetails.id === '雾海') ? (
-                      <span>Please use a modern browser to view this content.</span>
-                    ) : (
-                      <a href={selectedFile} target="_blank" rel="noopener noreferrer">
-                        Click here to download the PDF
-                      </a>
-                    )}
+                    <a href={selectedFile} target="_blank" rel="noopener noreferrer">
+                      Click here to download the PDF
+                    </a>
                   </p>
                 </object>
               </div>

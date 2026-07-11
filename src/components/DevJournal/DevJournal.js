@@ -1,8 +1,32 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './DevJournal.css';
 import SpoilerReveal from '../SpoilerReveal/SpoilerReveal';
+import ProtectedPdfViewer from '../ProtectedPdfViewer/ProtectedPdfViewer';
 
 function DevJournal() {
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if ((e.ctrlKey && (e.key === 's' || e.key === 'p')) ||
+          (e.ctrlKey && e.shiftKey && e.key === 'I') ||
+          e.key === 'F12') {
+        e.preventDefault();
+        return false;
+      }
+    };
+    const handleContextMenu = (e) => {
+      if (e.target.closest('.protected-pdf-preview')) {
+        e.preventDefault();
+        return false;
+      }
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    document.addEventListener('contextmenu', handleContextMenu);
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('contextmenu', handleContextMenu);
+    };
+  }, []);
+
   return (
     <div className="about-canvas">
       <div className="about-content">
@@ -23,35 +47,11 @@ function DevJournal() {
               Playtime is 20 hours. Scenario is set in the same universe as "Blue".
             </p>
             
-            <div className="campaign-preview">
-              <object 
-                data={process.env.PUBLIC_URL + "/Asset/RPG Campaings/Red.pdf#page=1"} 
-                type="application/pdf"
-                className="pdf-object"
-              >
-                <div className="pdf-fallback">
-                  <p>PDF preview not available</p>
-                </div>
-              </object>
-            </div>
-            
-            <div className="campaign-actions">
-              <a 
-                href={process.env.PUBLIC_URL + "/Asset/RPG Campaings/Red.pdf"} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="btn-primary"
-              >
-                View Campaign
-              </a>
-              <a 
-                href={process.env.PUBLIC_URL + "/Asset/RPG Campaings/Red.pdf"} 
-                download
-                className="btn-secondary"
-              >
-                Download
-              </a>
-            </div>
+            <ProtectedPdfViewer
+              pdfPath={process.env.PUBLIC_URL + "/Asset/RPG Campaings/Red.pdf"}
+              maxPages={10}
+              height={500}
+            />
             
             <SpoilerReveal warningText="WARNING! The developer commentary completely spoils the core of the campaigns. DO NOT read them if you have any intention of playing them in the future.">
               <div className="developer-commentary">
@@ -75,35 +75,11 @@ function DevJournal() {
               translating it, so here are my campaign notes in Chinese.
             </p>
             
-            <div className="campaign-preview">
-              <object 
-                data={process.env.PUBLIC_URL + "/Asset/RPG Campaings/Blue.pdf#page=1"} 
-                type="application/pdf"
-                className="pdf-object"
-              >
-                <div className="pdf-fallback">
-                  <p>PDF preview not available</p>
-                </div>
-              </object>
-            </div>
-            
-            <div className="campaign-actions">
-              <a 
-                href={process.env.PUBLIC_URL + "/Asset/RPG Campaings/Blue.pdf"} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="btn-primary"
-              >
-                View Campaign
-              </a>
-              <a 
-                href={process.env.PUBLIC_URL + "/Asset/RPG Campaings/Blue.pdf"} 
-                download
-                className="btn-secondary"
-              >
-                Download
-              </a>
-            </div>
+            <ProtectedPdfViewer
+              pdfPath={process.env.PUBLIC_URL + "/Asset/RPG Campaings/Blue.pdf"}
+              maxPages={10}
+              height={500}
+            />
             
             <SpoilerReveal warningText="WARNING! The developer commentary completely spoils the core of the campaigns. DO NOT read them if you have any intention of playing them in the future.">
               <div className="developer-commentary">

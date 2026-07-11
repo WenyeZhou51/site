@@ -90,6 +90,12 @@
   border: none;
 }
 
+.pdf-object-limited {
+  height: 50000px;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
 .pdf-fallback {
   display: flex;
   align-items: center;
