@@ -33,8 +33,7 @@ const Navbar = () => {
         <div className={`collapsible-body ${isOpen ? 'open' : ''}`}>
           <ul className="inline">
             <li><Link to="/code-projects">Videogames</Link></li>
-            <li><Link to="/games">Boardgames</Link></li>
-            <li><Link to="/rpg-campaigns">RPG Campaigns</Link></li>
+            <li><Link to="/tabletop-games">Tabletop Games</Link></li>
             <li><Link to="/random-art">Art Showcase</Link></li>
           </ul>
         </div>

@@ -1,0 +1,37 @@
+/* Use the same document frame as Red and material/gallery styles as GameDetails. */
+.shell-document-preview {
+  height: 500px;
+  scroll-margin-top: 140px;
+}
+
+.shell-document-preview img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 0;
+  border-radius: 0;
+  margin: 0 auto 6px;
+}
+
+.shell-materials .game-file-card {
+  width: 100%;
+  margin: 0;
+  text-align: left;
+  box-shadow: none;
+}
+
+.shell-materials .file-name,
+.shell-materials .file-description { display: block; }
+.shell-material-preview { margin-top: 2rem; }
+.shell-gameplay-photos .concept-art-featured-image { width: 100%; height: auto; }
+.shell-gameplay-photos .concept-art-thumbnail { padding: 0; margin: 0; box-shadow: none; }
+.shell-gameplay-photos .concept-art-thumbnail img { border: 0; border-radius: 0; }
+.shell-materials button:focus-visible,
+.shell-gameplay-photos button:focus-visible,
+.shell-document-preview:focus-visible { outline: 2px solid #222; outline-offset: 4px; }
+
+@media (max-width: 480px) {
+  .shell-document-preview { height: 400px; }
+  .shell-materials .game-files-grid { grid-template-columns: minmax(0, 1fr); }
+  .shell-gameplay-photos .concept-art-thumbnail { width: 80px; height: 80px; }
+}

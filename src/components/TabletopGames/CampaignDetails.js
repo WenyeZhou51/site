@@ -1,9 +1,12 @@
 import React, { useEffect } from 'react';
-import './DevJournal.css';
+import { Link, Navigate, useParams } from 'react-router-dom';
+import './CampaignDetails.css';
 import SpoilerReveal from '../SpoilerReveal/SpoilerReveal';
 import ProtectedPdfViewer from '../ProtectedPdfViewer/ProtectedPdfViewer';
+import ProjectRole from '../Games/ProjectRole';
 
-function DevJournal() {
+function CampaignDetails() {
+  const { campaignId } = useParams();
   useEffect(() => {
     const handleKeyDown = (e) => {
       if ((e.ctrlKey && (e.key === 's' || e.key === 'p')) ||
@@ -27,19 +30,24 @@ function DevJournal() {
     };
   }, []);
 
+  if (campaignId !== 'red' && campaignId !== 'blue') {
+    return <Navigate to="/tabletop-games" replace />;
+  }
+
   return (
     <div className="about-canvas">
       <div className="about-content">
-        <h2 className="about-title">RPG Campaigns</h2>
+        <Link to="/tabletop-games" className="btn-game">← Back to Tabletop Games</Link>
+        <div className="project-title-row project-title-row-detail">
+          <h2 className="about-title">{campaignId === 'red' ? 'Red' : 'Blue'}</h2>
+          <ProjectRole gameId={`${campaignId}-campaign`} />
+        </div>
         <p className="campaign-intro">
           A series of custom Role Playing Game campaigns I have written. I have been a DM for more than 10 years and love to write my one custom campaigns and scenarios. 
           Currently working on my Blue, Red, White Call of Cthulhu scenario trilogy. I will also upload Dungeons and Dragons campaigns once I polish them up.
         </p>
-        <p className="campaign-intro">
-          Click on a boardgame to see the DM's handbook.
-        </p>
-        
         <div className="campaigns-list">
+          {campaignId === 'red' && (
           <div className="campaign-card">
             <h3 className="campaign-title">Red, Call of Cthulhu custom scenario</h3>
             <p className="campaign-description">
@@ -48,7 +56,7 @@ function DevJournal() {
             </p>
             
             <ProtectedPdfViewer
-              pdfPath={process.env.PUBLIC_URL + "/Asset/RPG Campaings/Red.pdf"}
+              pdfPath={process.env.PUBLIC_URL + "/assets/tabletop-games/campaigns/Red.pdf"}
               maxPages={10}
               height={500}
             />
@@ -65,7 +73,9 @@ function DevJournal() {
               </div>
             </SpoilerReveal>
           </div>
+          )}
           
+          {campaignId === 'blue' && (
           <div className="campaign-card">
             <h3 className="campaign-title">Blue, Call of Cthulhu custom scenario</h3>
             <p className="campaign-description">
@@ -76,7 +86,7 @@ function DevJournal() {
             </p>
             
             <ProtectedPdfViewer
-              pdfPath={process.env.PUBLIC_URL + "/Asset/RPG Campaings/Blue.pdf"}
+              pdfPath={process.env.PUBLIC_URL + "/assets/tabletop-games/campaigns/Blue.pdf"}
               maxPages={10}
               height={500}
             />
@@ -93,10 +103,11 @@ function DevJournal() {
               </div>
             </SpoilerReveal>
           </div>
+          )}
         </div>
       </div>
     </div>
   );
 }
 
-export default DevJournal; 
+export default CampaignDetails;

@@ -8,6 +8,14 @@ function ProtectedPdfViewer({ pdfPath, maxPages = 10, height = 600 }) {
   const [pageCount, setPageCount] = useState(0);
   const containerRef = useRef(null);
   const [containerWidth, setContainerWidth] = useState(700);
+  const [motionFinished, setMotionFinished] = useState(() => !document.documentElement.hasAttribute('data-explore-motion'));
+
+  useEffect(() => {
+    const finish = () => setMotionFinished(true);
+    document.addEventListener('explore-motion-end', finish);
+    if (!document.documentElement.hasAttribute('data-explore-motion')) finish();
+    return () => document.removeEventListener('explore-motion-end', finish);
+  }, []);
 
   useEffect(() => {
     if (containerRef.current) {
@@ -33,7 +41,7 @@ function ProtectedPdfViewer({ pdfPath, maxPages = 10, height = 600 }) {
       style={{ height: `${height}px` }}
       onContextMenu={e => e.preventDefault()}
     >
-      <Document
+      {motionFinished ? <Document
         file={pdfPath}
         onLoadSuccess={onLoadSuccess}
         loading={<div className="pdf-loading">Loading preview...</div>}
@@ -48,7 +56,7 @@ function ProtectedPdfViewer({ pdfPath, maxPages = 10, height = 600 }) {
             renderAnnotationLayer={false}
           />
         ))}
-      </Document>
+      </Document> : <div className="pdf-loading">Loading preview...</div>}
       {pageCount > 0 && (
         <div className="pdf-page-limit-notice">
           Preview limited to first {pageCount} page{pageCount !== 1 ? 's' : ''}

@@ -1,0 +1,71 @@
+/* The navigation has its own capture and never bends, dissolves or duplicates. */
+.paper.container, .paper.container:hover { transform: none; }
+html[data-explore-motion] .paper-navbar { view-transition-name: explore-nav; }
+html[data-explore-motion] { scroll-behavior: auto; background: white; }
+html[data-explore-motion] .paper.container { transition: none; transform: none; }
+html[data-explore-motion] .project-role-note { animation: none; transition: none; }
+.explore-particles { position: fixed; inset: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 1100; view-transition-name: explore-grain; }
+.explore-filter-definitions { position: fixed; width: 0; height: 0; pointer-events: none; }
+
+html[data-explore-motion]::view-transition { pointer-events: none; background: white; }
+html[data-explore-motion]::view-transition-group(*) { animation: none; }
+html[data-explore-motion]::view-transition-old(*),
+html[data-explore-motion]::view-transition-new(*) { animation: none; mix-blend-mode: normal; }
+html[data-explore-motion]::view-transition-group(root) { z-index: 0; }
+html[data-explore-motion]::view-transition-group(explore-grain) { z-index: 2; }
+html[data-explore-motion]::view-transition-group(explore-nav) { z-index: 3; }
+html[data-explore-motion]::view-transition-group(motion-review) { z-index: 4; pointer-events: auto; }
+html[data-explore-motion]::view-transition-old(motion-review) { display: none; }
+html[data-explore-motion]::view-transition-old(explore-nav),
+html[data-explore-motion]::view-transition-old(explore-grain) { display: none; }
+html[data-explore-motion]::view-transition-new(explore-grain) { opacity: var(--ink-grain-opacity, 0); }
+html[data-explore-motion]::view-transition-new(root),
+html[data-explore-motion]::view-transition-old(root) {
+  width: 100%; height: 100%; object-fit: fill;
+}
+html[data-explore-motion]::view-transition-new(root) { z-index: 0; }
+html[data-explore-motion]::view-transition-old(root) { z-index: 1; }
+html[data-explore-motion="ink"]::view-transition-old(root) {
+  opacity: var(--ink-old, 1);
+}
+html[data-explore-motion="ink"]::view-transition-new(root) {
+  opacity: var(--ink-new, 0);
+}
+html[data-explore-motion="ink"]::view-transition-group(ink-source-art),
+html[data-explore-motion="ink"]::view-transition-group(ink-source-title),
+html[data-explore-motion="ink"]::view-transition-group(ink-destination-art),
+html[data-explore-motion="ink"]::view-transition-group(ink-destination-title) { z-index: 1; }
+html[data-explore-motion="ink"]::view-transition-old(ink-source-art),
+html[data-explore-motion="ink"]::view-transition-old(ink-source-title),
+html[data-explore-motion="ink"]::view-transition-new(ink-destination-art),
+html[data-explore-motion="ink"]::view-transition-new(ink-destination-title) {
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+}
+html[data-explore-motion="ink"]::view-transition-old(ink-source-art),
+html[data-explore-motion="ink"]::view-transition-old(ink-source-title) {
+  mask-image: var(--ink-out-mask);
+}
+html[data-explore-motion="ink"]::view-transition-new(ink-destination-art),
+html[data-explore-motion="ink"]::view-transition-new(ink-destination-title) {
+  mask-image: var(--ink-in-mask);
+}
+html[data-explore-motion="paper"]::view-transition-old(root) {
+  filter: var(--paper-filter, none) drop-shadow(3px 5px 3px rgb(36 33 29 / 12%));
+  transform: var(--sheet-lift, none);
+  transform-origin: 40% 15%;
+}
+html[data-explore-motion="paper"]::view-transition-new(root) {
+  transform: scale(var(--page-zoom, .94));
+  transform-origin: 50% var(--motion-top, 70px);
+}
+.motion-review {
+  view-transition-name: motion-review;
+  position: fixed; right: 12px; bottom: 12px; z-index: 1200; padding: 12px;
+  max-width: min(350px, calc(100vw - 24px)); border: 1px solid #222;
+  border-radius: 4px; background: white; font: 16px 'Patrick Hand', sans-serif;
+}
+.motion-review p { margin: 0 0 6px; }
+.motion-review label { display: flex; align-items: center; gap: 8px; }
+.motion-review input { margin: 0; }
+.motion-review button { margin: 6px 6px 0 0; padding: 4px 8px; font-size: 15px; }

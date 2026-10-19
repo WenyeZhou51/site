@@ -3,6 +3,13 @@ import { useParams, Link } from 'react-router-dom';
 import './GameDetails.css';
 import SpoilerReveal from '../SpoilerReveal/SpoilerReveal';
 import ProtectedPdfViewer from '../ProtectedPdfViewer/ProtectedPdfViewer';
+import GameAction, { getGameAction } from './GameAction';
+import ProjectRole from './ProjectRole';
+import StableGameVideo from './StableGameVideo';
+import latestVideogames from '../Videogames/latestVideogames';
+import shellOrHighWaters from '../TabletopGames/shellOrHighWaters';
+import GamePreview from './GamePreview';
+import ShellProjectFiles from '../TabletopGames/ShellProjectFiles';
 
 function GameDetails() {
   const { gameId } = useParams();
@@ -12,6 +19,18 @@ function GameDetails() {
   const [selectedConceptArt, setSelectedConceptArt] = useState(0);
 
   useEffect(() => {
+    if (gameId === shellOrHighWaters.id) {
+      setGameDetails(shellOrHighWaters);
+      setSelectedFile(null);
+      return;
+    }
+    const latestGame = latestVideogames.find((game) => game.id === gameId);
+    if (latestGame) {
+      setGameDetails(latestGame);
+      setSelectedFile(null);
+      return;
+    }
+
     // For demonstration, we're hard-coding the game details
     // In a real app, this would come from an API or database
     if (gameId === '雪骤山庄') {
@@ -20,91 +39,91 @@ function GameDetails() {
         name: '雪骤山庄',
         description: 'A Live Action Role Playing game scenario I wrote for 5 players. Involving two locked-room murder mysteries and a killer hiding amongst the players. Complete with character scripts and evidence cards.',
         longDescription: 'Five people gathers in the Snowbound Villa to celebrate the birthday of the Villa Owner, Xue Ao Qing. The unassuming celebration is interrupted the discovery of two names etched onto the coffin with the ominous message "Death by water". Snow falls, and the declaration soon comes true at night, with the two victims found dead in their locked rooms.',
-        thumbnailPath: process.env.PUBLIC_URL + '/Asset/Games/雪骤山庄/thumbnail.png',
+        thumbnailPath: process.env.PUBLIC_URL + '/assets/tabletop-games/雪骤山庄/thumbnail.png',
         files: [
           {
             name: '雪骤山庄人物剧本.pdf',
-            path: process.env.PUBLIC_URL + '/Asset/Games/雪骤山庄/雪骤山庄人物剧本.pdf',
+            path: process.env.PUBLIC_URL + '/assets/tabletop-games/雪骤山庄/雪骤山庄人物剧本.pdf',
             description: 'Character scripts and roles for the game'
           },
           {
             name: '雪骤山庄线索.pdf',
-            path: process.env.PUBLIC_URL + '/Asset/Games/雪骤山庄/雪骤山庄线索.pdf',
+            path: process.env.PUBLIC_URL + '/assets/tabletop-games/雪骤山庄/雪骤山庄线索.pdf',
             description: 'Clue cards for the game'
           }
         ]
       });
       // Set the first file as default selected
-      setSelectedFile(process.env.PUBLIC_URL + '/Asset/Games/雪骤山庄/雪骤山庄人物剧本.pdf');
+      setSelectedFile(process.env.PUBLIC_URL + '/assets/tabletop-games/雪骤山庄/雪骤山庄人物剧本.pdf');
     } else if (gameId === '雾海') {
       setGameDetails({
         id: '雾海',
         name: '雾海',
         description: 'A Live Action Role Playing game scenario I wrote for multiple players. Set in a mysterious fog-covered sea environment. Complete with character scripts and evidence cards.',
         longDescription: 'A Life Action Role Playing game for 5 people lasting 6-8 hours. The town of "Wandering Rocks" sits next to a cursed sea with leviathans in the waters and socerers in the streets. In this town, a ship sets sail with 13 passengers. Passengers are found dead one by one, each with a tarot card in their pocket belonging to a certain dead socerer...',
-        thumbnailPath: process.env.PUBLIC_URL + '/Asset/Games/雾海/thumbnail.png',
+        thumbnailPath: process.env.PUBLIC_URL + '/assets/tabletop-games/雾海/thumbnail.png',
         files: [
           {
             name: '雾海剧本7月15.pdf',
-            path: process.env.PUBLIC_URL + '/Asset/Games/雾海/雾海剧本7月15.pdf',
+            path: process.env.PUBLIC_URL + '/assets/tabletop-games/雾海/雾海剧本7月15.pdf',
             description: 'Character scripts and roles for the game'
           },
           {
             name: '雾海线索7月15.pdf',
-            path: process.env.PUBLIC_URL + '/Asset/Games/雾海/雾海线索7月15.pdf',
+            path: process.env.PUBLIC_URL + '/assets/tabletop-games/雾海/雾海线索7月15.pdf',
             description: 'Clue cards for the game'
           }
         ]
       });
       // Set the first file as default selected
-      setSelectedFile(process.env.PUBLIC_URL + '/Asset/Games/雾海/雾海剧本7月15.pdf');
+      setSelectedFile(process.env.PUBLIC_URL + '/assets/tabletop-games/雾海/雾海剧本7月15.pdf');
     } else if (gameId === 'Arcana') {
       setGameDetails({
         id: 'Arcana',
         name: 'Arcana',
         description: 'Arcana is a 2-4 player deck building game where players start from a set of basic cards and modify their deck to generate gold, slay monsters, and attain the arcane truth of the universe. The game format is similar to Dominion and Ascension.',
         longDescription: 'Arcana is a 2-4 player deck building game where players start from a set of basic cards and modify their deck to generate gold, slay monsters, and attain the arcane truth of the universe. The game format is similar to Dominion and Ascension.',
-        thumbnailPath: process.env.PUBLIC_URL + '/Asset/Games/Arcana/10x7 world deck market.png',
+        thumbnailPath: process.env.PUBLIC_URL + '/assets/tabletop-games/Arcana/10x7 world deck market.png',
         rules: {
           name: 'Rulebook.pdf',
-          path: process.env.PUBLIC_URL + '/Asset/Games/Arcana/Rulebook.pdf',
+          path: process.env.PUBLIC_URL + '/assets/tabletop-games/Arcana/Rulebook.pdf',
           description: 'Complete game rules and setup instructions'
         },
         files: [
           {
             name: 'BloodMagicBasicCards.pdf',
-            path: process.env.PUBLIC_URL + '/Asset/Games/Arcana/BloodMagicBasicCards.pdf',
+            path: process.env.PUBLIC_URL + '/assets/tabletop-games/Arcana/BloodMagicBasicCards.pdf',
             description: 'Basic Blood Magic cards for the game'
           },
           {
             name: 'Market Cards',
-            path: process.env.PUBLIC_URL + '/Asset/Games/Arcana/10x7 world deck market.png',
+            path: process.env.PUBLIC_URL + '/assets/tabletop-games/Arcana/10x7 world deck market.png',
             description: 'Market cards available for purchase'
           },
           {
             name: 'Market Cards Set 2',
-            path: process.env.PUBLIC_URL + '/Asset/Games/Arcana/10x7 world deck market 2.png',
+            path: process.env.PUBLIC_URL + '/assets/tabletop-games/Arcana/10x7 world deck market 2.png',
             description: 'Additional market cards for expanded gameplay'
           },
           {
             name: 'Monster Cards',
-            path: process.env.PUBLIC_URL + '/Asset/Games/Arcana/10x3 world deck monster.png',
+            path: process.env.PUBLIC_URL + '/assets/tabletop-games/Arcana/10x3 world deck monster.png',
             description: 'Monster cards to battle during play'
           },
           {
             name: 'Monster Card Backs',
-            path: process.env.PUBLIC_URL + '/Asset/Games/Arcana/10x3 world deck monster back.png',
+            path: process.env.PUBLIC_URL + '/assets/tabletop-games/Arcana/10x3 world deck monster back.png',
             description: 'Monster card backs'
           },
           {
             name: 'Attack Cards',
-            path: process.env.PUBLIC_URL + '/Asset/Games/Arcana/10x3 world deck attacks.png',
+            path: process.env.PUBLIC_URL + '/assets/tabletop-games/Arcana/10x3 world deck attacks.png',
             description: 'Attack cards for combat'
           }
         ]
       });
       // Set the first file as default selected
-      setSelectedFile(process.env.PUBLIC_URL + '/Asset/Games/Arcana/Rulebook.pdf');
+      setSelectedFile(process.env.PUBLIC_URL + '/assets/tabletop-games/Arcana/Rulebook.pdf');
     } else if (gameId === 'CAPACITOR') {
       setGameDetails({
         id: 'CAPACITOR',
@@ -114,16 +133,16 @@ function GameDetails() {
         longDescription: 'A collaborative multiplayer horror game where players scavenge an abandoned industrial complex for parts as the electricity depletes. The game creates a tense atmosphere as players must work together while the power slowly fades, creating an increasingly dangerous environment.\n\nI created this game with Austin Huang, Sungwon Chung, Junho Kim, and Caleb Mckinney. They are incredible programmers that helped the project immensely. Look out for their future works as well!',
         videoUrl: 'https://www.youtube.com/embed/5jVMpN_Kfqk?start=10',
         githubUrl: 'https://github.com/WenyeZhou51/CAPACITOR',
-        thumbnailPath: process.env.PUBLIC_URL + '/Asset/CodeProjects/Capacitor/placeholder.png',
+        thumbnailPath: process.env.PUBLIC_URL + '/assets/videogames/Capacitor/placeholder.png',
         conceptArt: [
           {
             name: 'Earworm design.png',
-            path: process.env.PUBLIC_URL + '/Asset/CodeProjects/Capacitor/Concept Art/Earworm design.png',
+            path: process.env.PUBLIC_URL + '/assets/videogames/Capacitor/Concept Art/Earworm design.png',
             title: 'Earworm Design'
           },
           {
             name: 'Venus design.png',
-            path: process.env.PUBLIC_URL + '/Asset/CodeProjects/Capacitor/Concept Art/Venus design.png',
+            path: process.env.PUBLIC_URL + '/assets/videogames/Capacitor/Concept Art/Venus design.png',
             title: 'Venus Design'
           }
         ]
@@ -138,116 +157,116 @@ function GameDetails() {
         longDescription: 'A 2D JRPG where the main character and their party ventures into the hollows to save the world and fall the obelisk. This classic-style role-playing game features turn-based combat, character progression, and an immersive story-driven experience.',
         videoUrl: 'https://www.youtube.com/embed/l5K3YIxcUnM?start=2',
         githubUrl: 'https://github.com/WenyeZhou51/The-Hollows',
-        thumbnailPath: process.env.PUBLIC_URL + '/Asset/CodeProjects/The Hollows/placeholder.png',
+        thumbnailPath: process.env.PUBLIC_URL + '/assets/videogames/The Hollows/placeholder.png',
         conceptArt: [
           {
             name: 'Character Design Fighter.png',
-            path: process.env.PUBLIC_URL + '/Asset/CodeProjects/The Hollows/Concept Art/Character Design Fighter.png',
+            path: process.env.PUBLIC_URL + '/assets/videogames/The Hollows/Concept Art/Character Design Fighter.png',
             title: 'Character Design Fighter'
           },
           {
             name: 'Character Design Magician.png',
-            path: process.env.PUBLIC_URL + '/Asset/CodeProjects/The Hollows/Concept Art/Character Design Magician.png',
+            path: process.env.PUBLIC_URL + '/assets/videogames/The Hollows/Concept Art/Character Design Magician.png',
             title: 'Character Design Magician'
           },
           {
             name: 'Character Design Bard.png',
-            path: process.env.PUBLIC_URL + '/Asset/CodeProjects/The Hollows/Concept Art/Character Design Bard.png',
+            path: process.env.PUBLIC_URL + '/assets/videogames/The Hollows/Concept Art/Character Design Bard.png',
             title: 'Character Design Bard'
           },
           {
             name: 'Character Design Ranger.png',
-            path: process.env.PUBLIC_URL + '/Asset/CodeProjects/The Hollows/Concept Art/Character Design Ranger.png',
+            path: process.env.PUBLIC_URL + '/assets/videogames/The Hollows/Concept Art/Character Design Ranger.png',
             title: 'Character Design Ranger'
           },
           {
             name: 'Character Portrait Fighter.png',
-            path: process.env.PUBLIC_URL + '/Asset/CodeProjects/The Hollows/Concept Art/Character Portrait Fighter.png',
+            path: process.env.PUBLIC_URL + '/assets/videogames/The Hollows/Concept Art/Character Portrait Fighter.png',
             title: 'Character Portrait Fighter'
           },
           {
             name: 'NPC hood overworld.png',
-            path: process.env.PUBLIC_URL + '/Asset/CodeProjects/The Hollows/Concept Art/NPC hood overworld.png',
+            path: process.env.PUBLIC_URL + '/assets/videogames/The Hollows/Concept Art/NPC hood overworld.png',
             title: 'NPC hood overworld'
           },
           {
             name: 'Monster Design Obelisk.png',
-            path: process.env.PUBLIC_URL + '/Asset/CodeProjects/The Hollows/Concept Art/Monster Design Obelisk.png',
+            path: process.env.PUBLIC_URL + '/assets/videogames/The Hollows/Concept Art/Monster Design Obelisk.png',
             title: 'Monster Design Obelisk'
           },
           {
             name: 'Monster Design Aperture.png',
-            path: process.env.PUBLIC_URL + '/Asset/CodeProjects/The Hollows/Concept Art/Monster Design Aperture.png',
+            path: process.env.PUBLIC_URL + '/assets/videogames/The Hollows/Concept Art/Monster Design Aperture.png',
             title: 'Monster Design Aperture'
           },
           {
             name: 'Monster Design Morphed Weaver.png',
-            path: process.env.PUBLIC_URL + '/Asset/CodeProjects/The Hollows/Concept Art/Monster Design Morphed Weaver.png',
+            path: process.env.PUBLIC_URL + '/assets/videogames/The Hollows/Concept Art/Monster Design Morphed Weaver.png',
             title: 'Monster Design Morphed Weaver'
           },
           {
             name: 'Monster Design Morphed Aperture.png',
-            path: process.env.PUBLIC_URL + '/Asset/CodeProjects/The Hollows/Concept Art/Monster Design Morphed Aperture.png',
+            path: process.env.PUBLIC_URL + '/assets/videogames/The Hollows/Concept Art/Monster Design Morphed Aperture.png',
             title: 'Monster Design Morphed Aperture'
           },
           {
             name: 'Monster Design Weaver.png',
-            path: process.env.PUBLIC_URL + '/Asset/CodeProjects/The Hollows/Concept Art/Monster Design Weaver.png',
+            path: process.env.PUBLIC_URL + '/assets/videogames/The Hollows/Concept Art/Monster Design Weaver.png',
             title: 'Monster Design Weaver'
           },
           {
             name: 'Overworld Gate.png',
-            path: process.env.PUBLIC_URL + '/Asset/CodeProjects/The Hollows/Concept Art/Overworld Gate.png',
+            path: process.env.PUBLIC_URL + '/assets/videogames/The Hollows/Concept Art/Overworld Gate.png',
             title: 'Overworld Gate'
           },
           {
             name: 'Overworld cave.png',
-            path: process.env.PUBLIC_URL + '/Asset/CodeProjects/The Hollows/Concept Art/Overworld cave.png',
+            path: process.env.PUBLIC_URL + '/assets/videogames/The Hollows/Concept Art/Overworld cave.png',
             title: 'Overworld cave'
           },
           {
             name: 'Overworld corridor.png',
-            path: process.env.PUBLIC_URL + '/Asset/CodeProjects/The Hollows/Concept Art/Overworld corridor.png',
+            path: process.env.PUBLIC_URL + '/assets/videogames/The Hollows/Concept Art/Overworld corridor.png',
             title: 'Overworld corridor'
           },
           {
             name: 'Overworld Entrance.png',
-            path: process.env.PUBLIC_URL + '/Asset/CodeProjects/The Hollows/Concept Art/Overworld Entrance.png',
+            path: process.env.PUBLIC_URL + '/assets/videogames/The Hollows/Concept Art/Overworld Entrance.png',
             title: 'Overworld Entrance'
           },
           {
             name: 'Comic panel.png',
-            path: process.env.PUBLIC_URL + '/Asset/CodeProjects/The Hollows/Concept Art/Comic panel.png',
+            path: process.env.PUBLIC_URL + '/assets/videogames/The Hollows/Concept Art/Comic panel.png',
             title: 'Comic panel'
           },
           {
             name: 'Comic panel 2.png',
-            path: process.env.PUBLIC_URL + '/Asset/CodeProjects/The Hollows/Concept Art/Comic panel 2.png',
+            path: process.env.PUBLIC_URL + '/assets/videogames/The Hollows/Concept Art/Comic panel 2.png',
             title: 'Comic panel 2'
           },
           {
             name: 'Comic panel 3.png',
-            path: process.env.PUBLIC_URL + '/Asset/CodeProjects/The Hollows/Concept Art/Comic panel 3.png',
+            path: process.env.PUBLIC_URL + '/assets/videogames/The Hollows/Concept Art/Comic panel 3.png',
             title: 'Comic panel 3'
           },
           {
             name: 'Start Menu.png',
-            path: process.env.PUBLIC_URL + '/Asset/CodeProjects/The Hollows/Concept Art/Start Menu.png',
+            path: process.env.PUBLIC_URL + '/assets/videogames/The Hollows/Concept Art/Start Menu.png',
             title: 'Start Menu'
           },
           {
             name: 'Surprise second phase.png',
-            path: process.env.PUBLIC_URL + '/Asset/CodeProjects/The Hollows/Concept Art/Surprise second phase.png',
+            path: process.env.PUBLIC_URL + '/assets/videogames/The Hollows/Concept Art/Surprise second phase.png',
             title: 'Surprise second phase'
           },
           {
             name: 'Cake with a candle on it.png',
-            path: process.env.PUBLIC_URL + '/Asset/CodeProjects/The Hollows/Concept Art/Cake with a candle on it.png',
+            path: process.env.PUBLIC_URL + '/assets/videogames/The Hollows/Concept Art/Cake with a candle on it.png',
             title: 'Cake with a candle on it'
           },
           {
             name: 'NPC hood.png',
-            path: process.env.PUBLIC_URL + '/Asset/CodeProjects/The Hollows/Concept Art/NPC hood.png',
+            path: process.env.PUBLIC_URL + '/assets/videogames/The Hollows/Concept Art/NPC hood.png',
             title: 'NPC hood'
           }
         ]
@@ -261,7 +280,7 @@ function GameDetails() {
         description: 'Minute Mark is a 2D singleplayer platformer where you run, jump, and slide across hand-drawn levels at incredible speed, racing against a strict timer. Rewind your mistakes and make creative skips to chase the leaderboard. Currently on STEAM!',
         longDescription: "The game is inspired by platformers like sonic and pizza tower, and aims to be a short demo of a player moving fast through a handdrawn world. The game is made by Wenye Zhou, Jialiang Yang, Sunny Sun, Yifan Xu, and Hanna Zhang as part of a Rice University class. Special thanks for Joe Warren for giving guidance and feedback for the game.",
         playableLink: 'https://store.steampowered.com/app/4387950/Minute_Mark/',
-        thumbnailPath: process.env.PUBLIC_URL + '/Asset/CodeProjects/Minute Mark/placeholder.png'
+        thumbnailPath: process.env.PUBLIC_URL + '/assets/videogames/Minute Mark/placeholder.png'
       });
       setSelectedFile(null); // Videogames don't need file selection
     } else if (gameId === 'CLEAN-OUT-THE-ROOMS') {
@@ -283,7 +302,7 @@ function GameDetails() {
         description: 'Play as the Seapunk — a coastal punk who drowns enemies, entwines cards into powerful Blobs, and grows their strength over time. Features unique Drown, Entwine, and Grow mechanics, 60+ cards, 3 relics, and co-op multiplayer cards.',
         longDescription: 'Play as the Seapunk — a coastal punk who drowns enemies, entwines cards into powerful Blobs, and grows their strength over time. Features unique Drown, Entwine, and Grow mechanics, 60+ cards, 3 relics, and co-op multiplayer cards.',
         playableLink: 'https://steamcommunity.com/sharedfiles/filedetails/?id=3748204457',
-        thumbnailPath: process.env.PUBLIC_URL + '/Asset/CodeProjects/Seapunk Mod/placeholder.png'
+        thumbnailPath: process.env.PUBLIC_URL + '/assets/videogames/Seapunk Mod/placeholder.png'
       });
       setSelectedFile(null); // Videogames don't need file selection
     }
@@ -339,7 +358,7 @@ function GameDetails() {
         <h2 className="about-title">Game Not Found</h2>
         <div className="game-not-found">
           <p>Sorry, the game you're looking for doesn't exist or hasn't been implemented yet.</p>
-          <Link to="/games" className="btn-game">Back to Boardgames</Link>
+          <Link to="/tabletop-games" className="btn-game">Back to Tabletop Games</Link>
           <Link to="/code-projects" className="btn-game">Back to Videogames</Link>
         </div>
       </div>
@@ -349,26 +368,20 @@ function GameDetails() {
   return (
     <div className="game-details-container">
       <div className="game-details-header">
-        <Link to={gameDetails.type === 'videogame' ? "/code-projects" : "/games"} className="back-link">
-          ← Back to {gameDetails.type === 'videogame' ? "Videogames" : "Boardgames"}
+        <Link to={gameDetails.type === 'videogame' ? "/code-projects" : "/tabletop-games"} className="back-link">
+          ← Back to {gameDetails.type === 'videogame' ? "Videogames" : "Tabletop Games"}
         </Link>
-        <h2 className="about-title" lang="zh-CN">{gameDetails.name}</h2>
+        <div className="project-title-row project-title-row-detail">
+          <h2 className="about-title" lang={gameDetails.language || 'zh-CN'}>{gameDetails.name}</h2>
+          <ProjectRole gameId={gameDetails.id} role={gameDetails.role} />
+        </div>
       </div>
 
       <div className="game-details-content">
         {gameDetails.videoUrl ? (
           <div className="game-video-section">
             <h3 className="game-subtitle">Game Preview</h3>
-            <div className="game-video-container">
-              <iframe
-                src={gameDetails.videoUrl}
-                title={`${gameDetails.name} preview`}
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="game-video"
-              ></iframe>
-            </div>
+            <StableGameVideo key={gameDetails.videoUrl} game={gameDetails} />
           </div>
         ) : gameDetails.thumbnailPath ? (
           <div className="game-main-image">
@@ -395,14 +408,16 @@ function GameDetails() {
           </div>
         ) : (
           <div className="game-main-image game-main-image-placeholder">
-            <span>{gameDetails.name}</span>
+            {gameDetails.coverTitle ? <GamePreview game={gameDetails} className="game-detail-text-cover" /> : <span>{gameDetails.name}</span>}
           </div>
         )}
 
-        <div className="game-description-container">
+        {gameDetails.longDescription && <div className="game-description-container">
           <h3 className="game-subtitle">About the Game</h3>
           <p className="game-long-description">{gameDetails.longDescription}</p>
-        </div>
+        </div>}
+
+        {gameDetails.id === shellOrHighWaters.id && <ShellProjectFiles />}
 
         {gameDetails.id === 'CAPACITOR' && (
           <div className="game-design-notes-section">
@@ -511,34 +526,11 @@ function GameDetails() {
           </div>
         )}
 
-        {gameDetails.playableLink && (
+        {getGameAction(gameDetails) && (
           <div className="game-github-section">
             <h3 className="game-subtitle">Play the Game</h3>
             <div className="github-link-container">
-              <a 
-                href={gameDetails.playableLink} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="btn-game play-link"
-              >
-                Play!
-              </a>
-            </div>
-          </div>
-        )}
-
-        {gameDetails.githubUrl && (
-          <div className="game-github-section">
-            <h3 className="game-subtitle">Source Code</h3>
-            <div className="github-link-container">
-              <a 
-                href={gameDetails.githubUrl} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="btn-game github-link"
-              >
-                View on GitHub
-              </a>
+              <GameAction game={gameDetails} className="btn-game" />
             </div>
           </div>
         )}
@@ -766,4 +758,4 @@ function GameDetails() {
   );
 }
 
-export default GameDetails; 
+export default GameDetails;

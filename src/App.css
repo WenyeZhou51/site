@@ -49,6 +49,13 @@
   margin-top: 60px; /* Space for fixed navbar */
 }
 
+/* Gallery pages start directly beneath the navigation; About Me keeps its layout. */
+.content-container:has(> .code-projects-container),
+.content-container:has(> .games-container) {
+  margin-top: 0;
+  padding: 0;
+}
+
 /* Paper CSS theme customization */
 :root {
   --primary: #000000;

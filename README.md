@@ -1,4 +1,23 @@
-# Getting Started with Create React App
+# Portfolio Website
+
+The local folders follow the website's section names:
+
+- `public/assets/about-me/`: profile image.
+- `public/assets/videogames/`: videogame images and concept art.
+- `public/assets/tabletop-games/`: boardgames and live-action mysteries, with RPG PDFs in `campaigns/`.
+- `public/assets/art-showcase/`: artwork and the journal comic.
+- `src/components/AboutMe/`, `Videogames/`, `TabletopGames/`, and `ArtShowcase/`: the corresponding page components. Campaign details are part of `TabletopGames/`.
+- `src/components/Games/`: game details and presentation components shared by videogames and tabletop games.
+
+Existing browser routes remain compatible, including `/code-projects`, `/random-art`, and `/games/:gameId`. Local asset paths now start with `/assets/`.
+
+## Publishing
+
+The live website is https://wenyezhou51.github.io/site/. Commit and push source changes on `fix-main`, then run `npm run deploy` to build and publish to the existing `gh-pages` branch. GitHub Pages serves that branch's root. `public/404.html` restores direct links to React routes.
+
+Ariadne exceeds GitHub's individual Git file limit, so its ZIP is hosted on the `game-downloads` release in `WenyeZhou51/site`. A local copy is retained in the ignored `downloads/` folder. Keep its release asset URL in `latestVideogames.js` when rebuilding the site.
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

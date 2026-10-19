@@ -1,7 +1,8 @@
 /* Main container styling */
 .games-container {
-  padding: 2rem;
-  margin-top: 1rem;
+  padding: 1.5rem;
+  background: #fff;
+  margin-top: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -48,34 +49,35 @@
 .games-intro {
   text-align: center;
   max-width: 800px;
-  margin: 0 auto 3rem;
+  margin: 0 auto 2rem;
   font-size: 1.1rem;
   color: #333;
   font-family: 'Patrick Hand', 'Comic Neue', 'Helvetica', sans-serif;
 }
 
+.games-container > .about-title {
+  margin-top: 0;
+}
+
+.games-intro p {
+  margin: 0;
+}
+
 .games-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 4rem 2rem;
   width: 100%;
   max-width: 1200px;
 }
 
 .game-card {
   background-color: #ffffff;
-  padding: 1.5rem;
-  border-top: 3px solid #000;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-  transition: transform 0.2s ease;
+  padding: 0;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   height: 100%;
-}
-
-.game-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .game-link {
@@ -87,27 +89,49 @@
 
 .game-thumbnail-container {
   width: 100%;
-  height: 200px;
+  aspect-ratio: 16 / 10;
   overflow: hidden;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
   border: 2px solid #222;
-  transition: all 0.2s ease;
+  border-radius: 3px 5px 4px 2px / 5px 2px 4px 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .game-thumbnail {
+  display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
+  object-fit: contain;
+  border: 0;
+  border-radius: 0;
 }
 
-.game-card:hover .game-thumbnail {
-  transform: scale(1.05);
+.game-text-cover {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: #333;
+  text-align: center;
+  font-family: 'Patrick Hand', 'Comic Neue', sans-serif;
+}
+
+.game-text-cover strong {
+  min-width: 40%;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #222;
+  font-family: 'Indie Flower', 'Comic Neue', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: normal;
 }
 
 .game-title {
   font-family: 'Indie Flower', 'Comic Neue', 'Helvetica', sans-serif;
-  font-size: 1.6rem;
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  margin-top: 0;
   margin-bottom: 0.5rem;
   color: #333;
   text-align: center;
@@ -131,7 +155,7 @@
 }
 
 .game-title::after {
-  content: '';
+  content: none;
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -149,6 +173,7 @@
   line-height: 1.4;
   color: #333;
   flex-grow: 1;
+  text-align: center;
 }
 
 .game-actions {
@@ -165,7 +190,7 @@
   color: #000;
   font-weight: 500;
   text-decoration: none;
-  border-radius: 4px;
+  border-radius: 5px 3px 6px 4px / 3px 5px 4px 6px;
   transition: all 0.3s ease;
   text-align: center;
   font-family: 'Patrick Hand', 'Comic Neue', sans-serif;
@@ -177,11 +202,16 @@
   transform: translateY(-2px);
 }
 
+.btn-game:focus-visible {
+  outline: 2px solid #222;
+  outline-offset: 5px;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .games-grid {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: 1fr;
+    gap: 3rem;
   }
   
   .about-title {
@@ -207,6 +237,10 @@
   }
   
   .game-card {
-    padding: 1rem;
+    padding: 0;
   }
-} 
+
+  .games-container {
+    padding: 1.5rem 0.5rem;
+  }
+}

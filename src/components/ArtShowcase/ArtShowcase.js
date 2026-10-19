@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './Creations.css';
+import './ArtShowcase.css';
 
-function Creations() {
+function ArtShowcase() {
   // State for managing which image is currently selected in galleries
   const [activeImageIndex, setActiveImageIndex] = useState({});
 
@@ -20,7 +20,7 @@ function Creations() {
       title: "City Street, 2025",
       description: "",
       type: "image",
-      imagePath: "/Asset/Random Art/City Street/City Street.png",
+      imagePath: "/assets/art-showcase/City Street/City Street.png",
       imageTitle: "City Street"
     },
     {
@@ -28,7 +28,7 @@ function Creations() {
       title: "Frames, 2025",
       description: "",
       type: "image",
-      imagePath: "/Asset/Random Art/Frames/Frames.png",
+      imagePath: "/assets/art-showcase/Frames/Frames.png",
       imageTitle: "Frames"
     },
     {
@@ -36,7 +36,7 @@ function Creations() {
       title: "Journal Comic, 2024",
       description: "",
       type: "pdf",
-      pdfPath: "/Asset/Random Art/Journal Comic/Tim_Book_cut.pdf",
+      pdfPath: "/assets/art-showcase/Journal Comic/Journal Comic.pdf",
     },
     {
       id: "memory-dream",
@@ -45,11 +45,11 @@ function Creations() {
       type: "dual-image",
       images: [
         {
-          path: "/Asset/Random Art/Memory and Dream/Memory.jpg",
+          path: "/assets/art-showcase/Memory and Dream/Memory.jpg",
           title: "Memory, Monotype"
         },
         {
-          path: "/Asset/Random Art/Memory and Dream/Dream.jpg",
+          path: "/assets/art-showcase/Memory and Dream/Dream.jpg",
           title: "Dream, Relief"
         }
       ]
@@ -61,19 +61,19 @@ function Creations() {
       type: "gallery",
       images: [
         {
-          path: "/Asset/Random Art/Tarot Drawings/Strength.png",
+          path: "/assets/art-showcase/Tarot Cards/Strength.png",
           title: "Strength"
         },
         {
-          path: "/Asset/Random Art/Tarot Drawings/Chariot.png",
+          path: "/assets/art-showcase/Tarot Cards/Chariot.png",
           title: "Chariot"
         },
         {
-          path: "/Asset/Random Art/Tarot Drawings/Wheel.png",
+          path: "/assets/art-showcase/Tarot Cards/Wheel.png",
           title: "Wheel of Fortune"
         },
         {
-          path: "/Asset/Random Art/Tarot Drawings/Hermit.png",
+          path: "/assets/art-showcase/Tarot Cards/Hermit.png",
           title: "Hermit"
         }
       ]
@@ -83,7 +83,7 @@ function Creations() {
       title: "Soft Rains Poster, 2025",
       description: "",
       type: "image",
-      imagePath: "/Asset/Random Art/Posters/Soft.png",
+      imagePath: "/assets/art-showcase/Soft Rains/Soft Rains.png",
       imageTitle: "Soft Rains"
     },
     {
@@ -91,7 +91,7 @@ function Creations() {
       title: "Sea Storm, 2025",
       description: "",
       type: "image",
-      imagePath: "/Asset/Random Art/Sea Storm/storm.jpg",
+      imagePath: "/assets/art-showcase/Sea Storm/Sea Storm.jpg",
       imageTitle: "Sea Storm"
     }
   ];
@@ -231,4 +231,4 @@ function Creations() {
   );
 }
 
-export default Creations;
+export default ArtShowcase;
